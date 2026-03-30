@@ -41,11 +41,17 @@ export default function Navbar() {
 
     return (
 
-        <header className="sticky top-0 z-50 backdrop-blur-md bg-background">
+        <header className="sticky top-0 z-50 backdrop-blur-md bg-background transition-all duration-500">
 
             {/* LOGO + HAMBURGER */}
 
-            <div className={`flex items-center md:justify-center justify-between px-6 py-4 transition-all duration-500 ${hideLogo ? "hidden md:hidden" : ""}`}>
+            <div
+                className={`flex items-center md:justify-center justify-between px-6 overflow-hidden transition-all duration-500
+    ${hideLogo
+                        ? "max-h-0 opacity-0 -translate-y-5 py-0"
+                        : "max-h-[120px] opacity-100 translate-y-0 py-4"
+                    }`}
+            >
 
                 <Link href="/">
                     <Image

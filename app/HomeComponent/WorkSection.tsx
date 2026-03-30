@@ -61,18 +61,18 @@ const works = [
 
 const WorkSection = () => {
     return (
-        <section className="bg-primary py-24 px-6">
+        <section className="bg-secondary/30 py-24 px-6">
 
             <div className="max-w-6xl mx-auto">
 
                 {/* Heading */}
 
                 <div className="text-center mb-20">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-gray-800 uppercase inline-block border-b border-background pb-5">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-foreground uppercase inline-block border-b border-primary pb-5">
                         A Glimpse of Our Work
                     </h2>
 
-                    <p className="mt-6 text-foreground max-w-xl mx-auto">
+                    <p className="mt-6 text-foreground/70 max-w-xl mx-auto">
                         A collection of beautiful moments we’ve captured, each telling a unique love story.
                     </p>
                 </div>
@@ -146,9 +146,9 @@ const WorkSection = () => {
                     <PrimaryButton
                         label="View All Works"
                         href="/our-work"
-                        className="border-background text-background"
-                        textClassName="group-hover:text-primary"
-                        bgClassName="bg-background"
+                        className="border-foreground text-foreground"
+                        textClassName="group-hover:text-background"
+                        bgClassName="bg-primary/70"
                     />
                 </div>
 

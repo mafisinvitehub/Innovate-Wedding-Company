@@ -36,7 +36,7 @@ const ServiceSection = () => {
                 {/* Heading */}
 
                 <div className="text-center mb-20">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-gray-800 uppercase inline-block border-b border-foreground pb-5">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-foreground uppercase inline-block border-b border-primary pb-5">
                         Our Services
                     </h2>
                 </div>
@@ -58,11 +58,11 @@ const ServiceSection = () => {
                                 {/* TEXT */}
 
                                 <div className={`${isReverse ? "md:order-2" : ""}`}>
-                                    <h3 className="text-xl md:text-2xl text-gray-800 mb-4 text-center md:text-left">
+                                    <h3 className="text-xl md:text-2xl text-foreground mb-4 text-center md:text-left">
                                         {service.title}
                                     </h3>
 
-                                    <p className="text-gray-600 leading-relaxed text-center md:text-left">
+                                    <p className="text-foreground/70 leading-relaxed text-center md:text-left">
                                         {service.desc}
                                     </p>
                                 </div>
@@ -107,7 +107,7 @@ const ServiceSection = () => {
                         href="/services"
                         className="border-foreground text-foreground"
                         textClassName="group-hover:text-background"
-                        bgClassName="bg-primary"
+                        bgClassName="bg-primary/70"
                     />
                 </div>
 

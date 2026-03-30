@@ -40,7 +40,7 @@ const TestimonialSection = () => {
 
                 {/* Heading */}
 
-                <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-gray-800 uppercase border-b border-foreground inline-block pb-5">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-foreground uppercase border-b border-primary inline-block pb-5">
                     Words That Matter
                 </h2>
 
@@ -48,15 +48,15 @@ const TestimonialSection = () => {
 
                 <div className="mt-16 transition duration-700 ease-out">
 
-                    <p className="text-lg md:text-xl text-gray-700 leading-relaxed italic">
+                    <p className="text-lg md:text-xl text-foreground/70 leading-relaxed italic">
                         “{testimonial.text}”
                     </p>
 
                     <div className="mt-8">
-                        <h4 className="text-base md:text-lg text-gray-800">
+                        <h4 className="text-base md:text-lg text-foreground">
                             {testimonial.name}
                         </h4>
-                        <p className="text-sm text-gray-500 mt-1">
+                        <p className="text-sm text-foreground/70 mt-1">
                             {testimonial.location}
                         </p>
                     </div>
@@ -69,7 +69,7 @@ const TestimonialSection = () => {
                     {testimonials.map((_, i) => (
                         <div
                             key={i}
-                            className={`h-[2px] transition-all duration-300 ${i === index ? "w-8 bg-gray-800" : "w-4 bg-gray-400"
+                            className={`h-[2px] transition-all duration-300 ${i === index ? "w-8 bg-foreground" : "w-4 bg-foreground/70"
                                 }`}
                         />
                     ))}
