@@ -115,7 +115,8 @@ const WorkSection = () => {
                     {works.slice(1).map((work, index) => (
                         <Link
                             key={index}
-                            href={`/our-work/${work.slug}`}
+                            // href={`/our-work/${work.slug}`}
+                            href={`/our-work/detail-work`}
                             className="group relative overflow-hidden rounded-xl"
                         >
 

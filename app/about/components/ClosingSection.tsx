@@ -2,7 +2,7 @@ import React from "react";
 
 const ClosingSection = () => {
     return (
-        <section className="w-full py-28 bg-secondary/30">
+        <section className="w-full py-24 bg-secondary/30">
 
             <div className="max-w-4xl mx-auto px-6 text-center">
 
