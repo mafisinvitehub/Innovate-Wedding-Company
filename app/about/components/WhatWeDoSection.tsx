@@ -1,21 +1,19 @@
-import React from "react";
-
 const services = [
     {
-        title: "Wedding Invitations",
-        desc: "Elegant and personalized invitations designed to reflect your special day.",
+        title: "Event Management",
+        desc: "We plan and execute weddings, corporate events, and private celebrations with a focus on creativity, precision, and seamless coordination.",
     },
     {
-        title: "Digital Invites",
-        desc: "Modern and shareable digital invitations crafted for convenience and style.",
+        title: "Photography & Videography",
+        desc: "From cinematic visuals to drone coverage, we capture moments with storytelling, creativity, and high-quality production.",
     },
     {
-        title: "Wedding Websites",
-        desc: "Beautiful, responsive websites to showcase your wedding story and details.",
+        title: "Digital & Web Solutions",
+        desc: "We create modern digital experiences including social media content, reels, and custom websites or web applications.",
     },
     {
-        title: "Custom Designs",
-        desc: "Fully customized designs tailored to match your theme and preferences.",
+        title: "Catering & Bridal Services",
+        desc: "Complete event support including multi-cuisine catering, bridal makeup, styling, and essential rental services.",
     },
 ];
 
@@ -32,12 +30,11 @@ const WhatWeDoSection = () => {
                     </p>
 
                     <h2 className="text-3xl md:text-5xl font-semibold text-foreground mb-6">
-                        Crafted for Your Perfect Wedding
+                        Complete Solutions Under One Roof
                     </h2>
 
                     <p className="text-foreground/70 text-base md:text-lg">
-                        We offer a range of design services focused on creating
-                        elegant and memorable wedding experiences.
+                        We bring together events, creative production, and digital solutions to deliver seamless, modern, and high-quality experiences for every client.
                     </p>
                 </div>
 

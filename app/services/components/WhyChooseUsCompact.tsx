@@ -1,12 +1,10 @@
-import React from "react";
-
 const features = [
-    "Premium & Elegant Designs",
-    "Fully Customizable Solutions",
-    "Fast Turnaround Time",
-    "Dedicated Client Support",
-    "Modern & Mobile-Friendly Designs",
-    "Attention to Every Detail",
+    "End-to-End Event & Creative Solutions",
+    "Modern, Fun & Luxury-Driven Approach",
+    "Experienced Team with Professional Execution",
+    "Customized Services for Every Requirement",
+    "High-Quality Visuals & Creative Output",
+    "Reliable Support with On-Time Delivery",
 ];
 
 const WhyChooseUsCompact = () => {
@@ -22,12 +20,11 @@ const WhyChooseUsCompact = () => {
                     </p>
 
                     <h2 className="text-3xl md:text-5xl font-semibold text-foreground mb-6">
-                        Designed for Excellence
+                        Built for Quality. Designed for Impact.
                     </h2>
 
                     <p className="text-foreground/70 text-base md:text-lg">
-                        We focus on delivering quality, elegance, and a seamless
-                        experience for every couple we work with.
+                        We combine creativity, technology, and execution to deliver seamless experiences — from events and visuals to digital solutions — all under one roof.
                     </p>
                 </div>
 
@@ -41,7 +38,7 @@ const WhyChooseUsCompact = () => {
                         >
 
                             {/* Dot */}
-                            <div className="w-2 h-2 rounded-full bg-primary" />
+                            <span className="text-primary text-lg">✔</span>
 
                             <p className="text-foreground/80 text-sm md:text-base">
                                 {item}

@@ -1,4 +1,3 @@
-import React from 'react'
 import ServiceHeroSection from './ServiceHeroSection'
 import ServicesDetailedSection from './ServicesDetailedSection'
 import HowItWorksSection from './HowItWorksSection'

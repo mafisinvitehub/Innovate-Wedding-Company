@@ -1,21 +1,19 @@
-import React from "react";
-
 const steps = [
     {
-        title: "Consultation",
-        desc: "We understand your requirements, style, and wedding theme.",
+        title: "Consultation & Planning",
+        desc: "We understand your requirements, vision, and goals — whether it’s an event, shoot, or digital project — and plan everything strategically.",
     },
     {
-        title: "Design & Creation",
-        desc: "Our team crafts elegant and personalized invitation designs.",
+        title: "Concept & Creative Direction",
+        desc: "Our team develops ideas, designs, and concepts that align with your style while ensuring a modern and premium approach.",
     },
     {
-        title: "Review & Revisions",
-        desc: "You review the design and we refine it to perfection.",
+        title: "Execution & Production",
+        desc: "From event setup and coordination to photography, videography, and digital work, we execute everything with precision.",
     },
     {
-        title: "Final Delivery",
-        desc: "We deliver your final invitation ready to share and celebrate.",
+        title: "Delivery & Support",
+        desc: "We deliver the final output with quality assurance and provide support to ensure everything runs smoothly.",
     },
 ];
 
@@ -32,12 +30,11 @@ const OurProcessSection = () => {
                     </p>
 
                     <h2 className="text-3xl md:text-5xl font-semibold text-foreground mb-6">
-                        Simple, Seamless, and Thoughtfully Crafted
+                        From Idea to Execution, Seamlessly Managed
                     </h2>
 
                     <p className="text-foreground/70 text-base md:text-lg max-w-2xl mx-auto">
-                        Our process is designed to make your experience smooth,
-                        transparent, and enjoyable from start to finish.
+                        Our workflow is designed to ensure clarity, creativity, and smooth execution at every stage — delivering a stress-free and premium experience.
                     </p>
                 </div>
 
@@ -53,7 +50,7 @@ const OurProcessSection = () => {
                             <div key={index} className="relative pl-12">
 
                                 {/* Dot */}
-                                <div className="absolute left-0 top-1 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-semibold">
+                                <div className="absolute left-0 top-1 w-8 h-8 rounded-full bg-primary/90 text-background flex items-center justify-center text-sm font-semibold shadow-md">
                                     {index + 1}
                                 </div>
 

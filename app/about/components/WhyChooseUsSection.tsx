@@ -1,21 +1,19 @@
-import React from "react";
-
 const features = [
     {
-        title: "Premium Design Quality",
-        desc: "Every invitation is crafted with attention to detail and elegance.",
+        title: "End-to-End Solutions",
+        desc: "From planning and execution to visuals and digital, we handle everything under one roof for a seamless experience.",
     },
     {
-        title: "Fully Customizable",
-        desc: "We tailor every design to match your wedding theme and vision.",
+        title: "Modern & Creative Approach",
+        desc: "We blend creativity with current trends to deliver experiences that feel fresh, engaging, and premium.",
     },
     {
-        title: "Quick Delivery",
-        desc: "Fast turnaround without compromising on quality.",
+        title: "Professional Execution",
+        desc: "Our team ensures every project is handled with precision, proper planning, and attention to detail.",
     },
     {
-        title: "Dedicated Support",
-        desc: "We guide you through every step for a smooth experience.",
+        title: "Client-Focused Experience",
+        desc: "We work closely with you at every step to understand your vision and deliver exactly what you need.",
     },
 ];
 
@@ -33,15 +31,12 @@ const WhyChooseUsSection = () => {
                     </p>
 
                     <h2 className="text-3xl md:text-5xl font-semibold text-foreground leading-tight mb-6">
-                        Designed with Passion, <br />
-                        Delivered with Perfection
+                        More Than a Service, <br />
+                        A Complete Experience
                     </h2>
 
                     <p className="text-foreground/70 text-base md:text-lg leading-relaxed">
-                        We combine creativity, cultural understanding, and modern
-                        design to deliver wedding invitations that truly stand
-                        out. Our focus is not just on design, but on creating a
-                        seamless and memorable experience for you.
+                        We are not just a service provider — we are a complete creative and execution partner. With a focus on quality, innovation, and reliability, we deliver experiences that are smooth, impactful, and tailored to every client.
                     </p>
 
                 </div>
@@ -57,7 +52,7 @@ const WhyChooseUsSection = () => {
 
                             {/* Icon */}
                             <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary text-lg">
-                                ✓
+                                ✦
                             </div>
 
                             <div>

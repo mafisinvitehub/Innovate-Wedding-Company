@@ -9,56 +9,14 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const slides = [
-    {
-        img: "/temp-images/home/1.webp",
-        title: "Elegant Invitations",
-        desc: "Luxury digital wedding invites",
-    },
-    {
-        img: "/temp-images/home/2.webp",
-        title: "Timeless Designs",
-        desc: "Crafted with premium aesthetics",
-    },
-    {
-        img: "/temp-images/home/3.jpg",
-        title: "Memorable Moments",
-        desc: "Create beautiful memories",
-    },
-    {
-        img: "/temp-images/home/4.jpg",
-        title: "Luxury Experience",
-        desc: "Designed for modern couples",
-    },
-    {
-        img: "/temp-images/home/5.jpg",
-        title: "Beautiful Story",
-        desc: "Tell your love story",
-    },
-    {
-        img: "/temp-images/home/6.jpg",
-        title: "Premium Invitations",
-        desc: "Elegant and modern style",
-    },
-    {
-        img: "/temp-images/home/7.jpg",
-        title: "Creative Designs",
-        desc: "Unique wedding experiences",
-    },
-    {
-        img: "/temp-images/home/8.jpg",
-        title: "Luxury Wedding",
-        desc: "Celebrate love beautifully",
-    },
-    {
-        img: "/temp-images/home/9.jpg",
-        title: "Digital Elegance",
-        desc: "Modern invitation platform",
-    },
-    {
-        img: "/temp-images/home/10.webp",
-        title: "Digital Elegance",
-        desc: "Modern invitation platform",
-    },
+    { img: "/temp-images/home/inn1.jpg" },
+    { img: "/temp-images/home/inn2.jpg" },
+    { img: "/temp-images/home/inn3.jpg" },
+    { img: "/temp-images/home/inn4.jpg" },
+    { img: "/temp-images/home/inn5.jpg" },
+    { img: "/temp-images/home/inn6.jpg" },
+    { img: "/temp-images/home/inn7.jpg" },
+    { img: "/temp-images/home/inn8.jpg" },
 ];
 
 const HeroSection = () => {
@@ -95,7 +53,6 @@ const HeroSection = () => {
                     delay: 6000,
                     disableOnInteraction: false,
                 }}
-                navigation
                 loop={true}
                 pagination={{
                     clickable: true,
@@ -117,7 +74,7 @@ const HeroSection = () => {
 
                                 <motion.img
                                     src={slide.img}
-                                    alt="hero"
+                                    alt="Event management, wedding, photography and digital services"
                                     className="absolute w-[120%] h-[120%] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                                     style={{
                                         willChange: "transform",
@@ -131,8 +88,8 @@ const HeroSection = () => {
                                     transition={animation.transition}
                                 />
 
-                                {/* darker overlay (reduce bleach feel) */}
-                                {/* <div className="absolute inset-0 bg-black/25"></div> */}
+                                {/* DARK OVERLAY */}
+                                <div className="absolute inset-0 bg-black/40"></div>
 
                             </div>
                         </SwiperSlide>
@@ -141,43 +98,36 @@ const HeroSection = () => {
 
             </Swiper>
 
-            {/* CENTER TEXT */}
+            {/* STATIC HERO CONTENT */}
 
-            <div className="absolute inset-0 flex items-end justify-center z-10 pointer-events-none mb-40">
+            <div className="absolute inset-0 flex items-center justify-center z-10 text-center px-6">
 
-                <div className="bg-[#F5EBDD]/75 px-6 py-4 rounded-md text-center shadow-lg">
+                <div className="max-w-3xl">
 
-                    <Swiper
-                        modules={[Autoplay]}
-                        autoplay={{ delay: 6000 }}
-                        allowTouchMove={false}
-                        className="w-[260px] md:w-[340px]"
-                    >
-                        {slides.map((slide, index) => (
-                            <SwiperSlide key={index}>
+                    <h1 className="text-3xl md:text-6xl font-semibold text-white leading-tight mb-6">
+                        Creating Unforgettable Experiences <br />
+                        <span className="text-primary">All Under One Roof</span>
+                    </h1>
 
-                                <motion.div
-                                    initial={{ opacity: 1, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 1 }}
-                                >
+                    <p className="text-white/80 text-sm md:text-lg max-w-xl mx-auto mb-8">
+                        Weddings, events, photography, digital solutions, and more — crafted with creativity, precision, and a modern luxury touch.
+                    </p>
 
-                                    <h1
-                                        className="text-2xl md:text-3xl text-gray-800"
-                                        style={{ fontFamily: "'Great Vibes', cursive" }}
-                                    >
-                                        {slide.title}
-                                    </h1>
+                    <div className="flex justify-center gap-4 flex-wrap">
+                        <a
+                            href="/contact"
+                            className="px-6 py-3 bg-primary text-background rounded-md text-sm hover:scale-105 transition"
+                        >
+                            Start Your Project
+                        </a>
 
-                                    <p className="text-xs md:text-sm text-gray-700 mt-1">
-                                        {slide.desc}
-                                    </p>
-
-                                </motion.div>
-
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                        <a
+                            href="/our-work"
+                            className="px-6 py-3 border border-white text-white rounded-md text-sm hover:bg-white hover:text-black transition"
+                        >
+                            View Our Work
+                        </a>
+                    </div>
 
                 </div>
 
@@ -204,28 +154,7 @@ const HeroSection = () => {
                     width:36px;
                 }
 
-                /* SMALLER ARROWS */
-
-                .swiper-button-next,
-                .swiper-button-prev{
-                    display: none !important;
-                    color:#F5EBDD;
-                    transform:scale(.65);
-                    transition:all .3s ease;
-                }
-
-                .swiper-button-next:hover,
-                .swiper-button-prev:hover{
-                    transform:scale(.8);
-                }
-
-                /* hide default thick icon */
-                .swiper-button-next::after,
-                .swiper-button-prev::after{
-                    font-size:22px;
-                }
-
-`}</style>
+            `}</style>
 
         </section>
     );

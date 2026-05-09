@@ -1,13 +1,12 @@
-import React from 'react'
 import WorkHeroSection from './WorkHeroSection'
 import WorkGallerySection from './WorkGallerySection'
 import WorkCTASection from './WorkCTASection'
 
-const OurWorkPage = () => {
+const OurWorkPage = ({ works }: any) => {
     return (
         <div>
             <WorkHeroSection />
-            <WorkGallerySection />
+            <WorkGallerySection works={works} />
             <WorkCTASection />
         </div>
     )

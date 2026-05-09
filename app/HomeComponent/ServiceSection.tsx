@@ -6,26 +6,26 @@ import { motion } from "framer-motion"
 
 const services = [
     {
-        title: "Capturing Moments That Last Forever",
-        desc: "We preserve every smile, every glance, and every emotion through timeless photography that tells your story beautifully.",
-        img: "/temp-images/home/service-image.webp",
+        title: "Complete Event Management",
+        desc: "From weddings and corporate events to private celebrations, we plan and execute every detail seamlessly to deliver a stress-free and premium experience.",
+        img: "/temp-images/services/event-management.png",
     },
     {
-        title: "Cinematic Stories of Your Special Day",
-        desc: "Our films bring your wedding to life with emotion, music, and storytelling that you’ll cherish forever.",
-        img: "/temp-images/home/service-video.jpg",
+        title: "Photography, Videography & Drone",
+        desc: "We capture every moment with cinematic storytelling, high-end photography, videography, and drone coverage to create visuals that last forever.",
+        img: "/temp-images/services/photography.png",
     },
     {
-        title: "Seamless Planning, Perfect Execution",
-        desc: "From planning to execution, we ensure every detail is handled with care so you can enjoy every moment stress-free.",
-        img: "/temp-images/home/service-event.jpg",
+        title: "Creative & Digital Solutions",
+        desc: "From reels and content creation to digital marketing and website development, we help you build a strong and modern digital presence.",
+        img: "/temp-images/services/digital-marketing.png",
     },
     {
-        title: "Digital Experiences for Modern Weddings",
-        desc: "From wedding websites to digital solutions, we create modern experiences that connect your celebration beautifully.",
-        img: "/temp-images/home/service-site.webp",
+        title: "Catering, Bridal & Custom Services",
+        desc: "Multi-cuisine catering, bridal makeup, rental accessories, and surprise planning — everything you need to complete your event, all in one place.",
+        img: "/temp-images/services/catering.png",
     },
-]
+];
 
 const ServiceSection = () => {
     return (
@@ -37,7 +37,7 @@ const ServiceSection = () => {
 
                 <div className="text-center mb-20">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-foreground uppercase inline-block border-b border-primary pb-5">
-                        Our Services
+                        What We Offer
                     </h2>
                 </div>
 
@@ -103,7 +103,7 @@ const ServiceSection = () => {
 
                 <div className="mt-20 flex justify-center">
                     <PrimaryButton
-                        label="Explore All Services"
+                        label="View All Services"
                         href="/services"
                         className="border-foreground text-foreground"
                         textClassName="group-hover:text-background"

@@ -8,12 +8,11 @@ const ServiceCTASection = () => {
 
                 {/* Text */}
                 <h2 className="text-2xl md:text-4xl font-semibold text-foreground mb-6">
-                    Ready to Create Your Perfect Invitation?
+                    Ready to Bring Your Ideas to Life?
                 </h2>
 
                 <p className="text-foreground/70 text-base md:text-lg mb-8">
-                    Let’s bring your wedding ideas to life with designs that
-                    truly reflect your story and style.
+                    Whether it’s a wedding, corporate event, creative shoot, or digital project — let’s create something modern, fun, and truly unforgettable together.
                 </p>
 
                 <PrimaryButton

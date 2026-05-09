@@ -1,7 +1,6 @@
 'use client';
 
 import Image from "next/image";
-import React from "react";
 
 const OurStorySection = () => {
     return (
@@ -13,7 +12,7 @@ const OurStorySection = () => {
                 <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
 
                     <Image
-                        src="/temp-images/about/our-story-image.webp"
+                        src="/temp-images/about/our-story-image.png"
                         alt="South Indian Wedding Moment"
                         fill
                         className="object-cover"
@@ -29,24 +28,22 @@ const OurStorySection = () => {
                     </p>
 
                     <h2 className="text-3xl md:text-5xl font-semibold text-foreground leading-tight mb-6">
-                        Every Wedding Has a Story, <br />
-                        We Make It Memorable
+                        From a Small Beginning <br />
+                        to a Complete Creative Brand
                     </h2>
 
                     <p className="text-foreground/70 text-base md:text-lg leading-relaxed mb-6">
-                        What started as a passion for design quickly turned into
-                        a mission to create beautiful and meaningful wedding
-                        invitations. We believe that every couple deserves a
-                        unique way to tell their story.
+                        Our journey began as a freelance effort driven by passion and creativity. With a focus on weddings and event management, we started small — taking on projects with dedication and attention to detail, gradually building trust and experience.
                     </p>
 
                     <p className="text-foreground/70 text-base md:text-lg leading-relaxed">
-                        From traditional to modern styles, we blend creativity
-                        with elegance to craft invitations that truly reflect
-                        your special day and leave a lasting impression.
+                        As we grew, we expanded into a full-service brand, offering photography, videography, digital solutions, catering, and more. Today, we operate with a modern, corporate approach — delivering complete, seamless experiences designed to meet every need under one roof.
                     </p>
 
-                    {/* Small Divider */}
+                    <p className="text-foreground/60 text-sm mt-4">
+                        Started in 2023 • Expanded to a corporate-level studio in 2026
+                    </p>
+
                     <div className="mt-8 w-16 h-[2px] bg-primary" />
 
                 </div>

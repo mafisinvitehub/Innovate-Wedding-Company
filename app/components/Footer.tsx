@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa"
+import { FaInstagram, FaYoutube, FaFacebook, FaEnvelope } from "react-icons/fa"
+import { FaLocationCrosshairs, FaPhone } from "react-icons/fa6"
 
 const Footer = () => {
     return (
@@ -19,8 +20,9 @@ const Footer = () => {
                         </h3>
 
                         <p className="text-sm leading-relaxed text-secondary/80 max-w-sm">
-                            Crafting timeless wedding memories through photography,
-                            cinematic films, and seamless event experiences.
+                            A full-service creative company specializing in weddings,
+                            events, photography, videography, and digital solutions.
+                            We craft premium experiences that turn ideas into unforgettable moments.
                         </p>
                     </div>
 
@@ -62,10 +64,10 @@ const Footer = () => {
 
                         <ul className="space-y-3 text-sm">
                             {[
-                                "Wedding Photography",
-                                "Cinematic Videography",
-                                "Wedding Planning",
-                                "Digital Wedding Solutions",
+                                "Wedding Planning & Event Management",
+                                "Corporate Events & Brand Experiences",
+                                "Photography & Cinematic Videography",
+                                "Digital Marketing & Website Development",
                             ].map((service, i) => (
                                 <li
                                     key={i}
@@ -85,10 +87,13 @@ const Footer = () => {
                         </h4>
 
                         <ul className="space-y-3 text-sm text-secondary/80">
-                            <li>📍 Tamil Nadu, India</li>
+                            <li className="flex gap-2 items-start">
+                                <FaLocationCrosshairs className="min-w-[1rem] mt-1" />
+                                Innovate Wedding Company, Pattakasalianvilai Rd, Vattakarai, Maravankudieruppu, Nagercoil, Tamil Nadu 629002
+                            </li>
 
-                            <li>
-                                📞{" "}
+                            <li className="flex gap-2 items-start">
+                                <FaPhone className="min-w-[1rem] mt-1" />
                                 <a
                                     href="tel:+919876543210"
                                     className="hover:text-primary transition"
@@ -97,8 +102,8 @@ const Footer = () => {
                                 </a>
                             </li>
 
-                            <li className="break-all">
-                                ✉️{" "}
+                            <li className="flex gap-2 items-start">
+                                <FaEnvelope className="min-w-[1rem] mt-1" />
                                 <a
                                     href="mailto:innovate.a2z@gmail.com"
                                     className="hover:text-primary transition"
@@ -106,11 +111,24 @@ const Footer = () => {
                                     innovate.a2z@gmail.com
                                 </a>
                             </li>
+                            <li className="flex gap-2 items-start">
+                                <FaInstagram className="min-w-[1rem] mt-1" />
+                                <a
+                                    href="https://www.instagram.com/innovate_weddings/"
+                                    className="hover:text-primary transition"
+                                >
+                                    innovate_weddings
+                                </a>
+                            </li>
                         </ul>
+
+                        <p className="mt-4 text-xs text-secondary/60">
+                            Available across Tamil Nadu for weddings, events, and digital projects.
+                        </p>
 
                         {/* SOCIAL */}
 
-                        <div className="flex gap-4 mt-6 text-lg">
+                        {/* <div className="flex gap-4 mt-6 text-lg">
                             <a href="#" className="hover:text-primary transition">
                                 <FaInstagram />
                             </a>
@@ -120,7 +138,7 @@ const Footer = () => {
                             <a href="#" className="hover:text-primary transition">
                                 <FaFacebook />
                             </a>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>

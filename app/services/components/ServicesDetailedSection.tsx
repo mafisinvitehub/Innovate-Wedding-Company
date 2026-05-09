@@ -1,26 +1,49 @@
 import Image from "next/image";
-import React from "react";
 
 const services = [
     {
-        title: "Wedding Invitations",
-        desc: "Elegant and personalized invitation designs crafted to reflect your unique wedding story and style.",
-        img: "/temp-images/home/service-image.webp",
+        title: "Event Management & Celebrations",
+        desc: "We specialize in planning and executing luxury weddings, corporate events, and private celebrations with complete precision.",
+        points: [
+            "Luxury Weddings & Destination Events",
+            "Corporate Events & Brand Launches",
+            "Birthday, Baby Shower & Private Celebrations",
+            "Surprise Planning & Custom Experiences",
+        ],
+        img: "/temp-images/services/event-management.png",
     },
     {
-        title: "Digital Invitations",
-        desc: "Modern and shareable digital invites designed for convenience while maintaining a premium aesthetic.",
-        img: "/temp-images/home/service-video.jpg",
+        title: "Photography, Videography & Drone",
+        desc: "Cinematic visuals and storytelling through photography, videography, and drone coverage.",
+        points: [
+            "Wedding Photography & Cinematic Videography",
+            "Drone Shoots & Aerial Coverage",
+            "Model, Product & Outdoor Shoots",
+            "Reels Creation & Video Editing",
+        ],
+        img: "/temp-images/services/photography.png",
     },
     {
-        title: "Wedding Websites",
-        desc: "Beautiful, responsive wedding websites that showcase your story, events, and memories.",
-        img: "/temp-images/home/service-event.jpg",
+        title: "Digital Marketing & Web Solutions",
+        desc: "We build strong digital presence through marketing, content, and web solutions.",
+        points: [
+            "Social Media Marketing & Strategy",
+            "Reels, Ads & Content Creation",
+            "Website & Web App Development",
+            "UI/UX Design & Branding",
+        ],
+        img: "/temp-images/services/digital-marketing.png",
     },
     {
-        title: "Custom Design Solutions",
-        desc: "Tailor-made designs that perfectly match your wedding theme, culture, and personal preferences.",
-        img: "/temp-images/home/service-site.webp",
+        title: "Catering & Bridal Services",
+        desc: "Complete event support including catering, makeup, and rental services.",
+        points: [
+            "Multi-Cuisine Catering (Veg & Non-Veg)",
+            "Breakfast, Lunch & Dinner Services",
+            "Bridal Makeup & Styling",
+            "Rental Accessories & Essentials",
+        ],
+        img: "/temp-images/services/catering.png",
     },
 ];
 
@@ -33,16 +56,15 @@ const ServicesDetailedSection = () => {
                 {/* Heading */}
                 <div className="text-center max-w-2xl mx-auto mb-20">
                     <p className="text-sm tracking-[4px] text-primary uppercase mb-4">
-                        What We Offer
+                        Our Expertise
                     </p>
 
                     <h2 className="text-3xl md:text-5xl font-semibold text-foreground mb-6">
-                        Crafted Services for Your Special Day
+                        End-to-End Services Designed for Every Experience
                     </h2>
 
                     <p className="text-foreground/70 text-base md:text-lg">
-                        We provide a complete range of wedding design services
-                        tailored to make your celebration elegant and memorable.
+                        We offer a complete range of professional services covering events, visual production, digital solutions, and hospitality — all delivered with a modern approach and a focus on quality, creativity, and seamless execution.
                     </p>
                 </div>
 
@@ -76,6 +98,14 @@ const ServicesDetailedSection = () => {
                                     {service.desc}
                                 </p>
 
+                                <ul className="mt-3 text-sm text-foreground/60 space-y-1">
+                                    {service.points.map((point: string, i: number) => (
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-primary">✔</span>
+                                            <span>{point}</span>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
 
                         </div>

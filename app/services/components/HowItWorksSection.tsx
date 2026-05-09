@@ -1,21 +1,19 @@
-import React from "react";
-
 const steps = [
     {
         title: "Consultation",
-        desc: "We understand your vision, style, and wedding requirements.",
+        desc: "We start by understanding your requirements, ideas, and goals — whether it’s an event, shoot, or digital project.",
     },
     {
-        title: "Design",
-        desc: "Our team creates elegant concepts tailored to your theme.",
+        title: "Planning & Concept",
+        desc: "Our team creates a clear plan and develops creative concepts tailored to your vision, style, and brand.",
     },
     {
-        title: "Refinement",
-        desc: "We refine the design based on your feedback and finalize it.",
+        title: "Execution",
+        desc: "From production to coordination, we handle everything with precision, ensuring a smooth and stress-free experience.",
     },
     {
-        title: "Delivery",
-        desc: "Your final design is delivered ready to share and celebrate.",
+        title: "Delivery & Support",
+        desc: "We deliver the final outcome with quality and care, while also providing support to ensure everything runs perfectly.",
     },
 ];
 
@@ -32,12 +30,11 @@ const HowItWorksSection = () => {
                     </p>
 
                     <h2 className="text-3xl md:text-5xl font-semibold text-foreground mb-6">
-                        A Simple Process Designed for You
+                        A Seamless Process from Idea to Execution
                     </h2>
 
                     <p className="text-foreground/70 text-base md:text-lg">
-                        Our workflow is simple, transparent, and crafted to give
-                        you a smooth experience from start to finish.
+                        Our approach is simple, transparent, and designed to deliver modern, creative, and high-quality results across every project.
                     </p>
                 </div>
 
@@ -48,8 +45,8 @@ const HowItWorksSection = () => {
                         <div key={index} className="text-center">
 
                             {/* Number */}
-                            <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary text-background font-semibold">
-                                {index + 1}
+                            <div className="w-15 h-15 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary text-background font-semibold">
+                                Step {index + 1}
                             </div>
 
                             <h3 className="text-lg font-semibold text-foreground mb-2">

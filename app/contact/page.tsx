@@ -1,12 +1,13 @@
-import React from 'react'
-import ContactPage from './component/ContactPage'
+import { client } from "@/lib/sanity";
+import { contactQuery } from "@/lib/queries";
+import ContactPage from "./component/ContactPage";
 
-const Contact = () => {
+export default async function Contact() {
+    const data = await client.fetch(contactQuery);
+
     return (
         <div>
-            <ContactPage />
+            <ContactPage data={data} />
         </div>
-    )
+    );
 }
-
-export default Contact
