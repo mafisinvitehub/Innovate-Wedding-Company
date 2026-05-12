@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { FaEnvelope, FaInstagram } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa6";
 
 type Props = {
     data: {
@@ -110,14 +112,40 @@ const ContactPage: React.FC<Props> = ({ data }) => {
                 <div className="space-y-10">
 
                     <div>
-                        <p className="text-xs text-primary uppercase mb-2">Phone</p>
-                        <p className="text-foreground text-lg">{data.phone}</p>
+                        <p className="text-xs text-primary uppercase mb-2">Founder</p>
+                        <p className="text-foreground text-lg">Mohammed Faizal Sulaiman</p>
                     </div>
 
                     <div>
+                        <p className="text-xs text-primary uppercase mb-3">Reach Us Through</p>
+                        {/* <p className="text-xs text-primary uppercase mb-2">Phone</p> */}
+                        <a
+                            href={`tel:${data.phone}`}
+                            className="hover:text-primary transition"
+                        >
+                            <div className="flex items-center gap-3 mb-2">
+                                <FaPhone className="text-primary" />
+                                <p className="text-foreground text-lg">{data.phone}</p>
+                            </div>
+                        </a>
+                        <a href={`mailto:${data.email}`}                        >
+                            <div className="flex items-center gap-3 mb-2">
+                                <FaEnvelope className="text-primary" />
+                                <p className="text-foreground text-lg">{data.email}</p>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/innovate_weddings/"  >
+                            <div className="flex items-center gap-3 mb-2">
+                                <FaInstagram className="text-primary" />
+                                <p className="text-foreground text-lg">innovate_wedding</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    {/* <div>
                         <p className="text-xs text-primary uppercase mb-2">Email</p>
                         <p className="text-foreground text-lg">{data.email}</p>
-                    </div>
+                    </div> */}
 
                     <div>
                         <p className="text-xs text-primary uppercase mb-2">Location</p>

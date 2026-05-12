@@ -105,10 +105,10 @@ const Footer = () => {
                             <li className="flex gap-2 items-start">
                                 <FaEnvelope className="min-w-[1rem] mt-1" />
                                 <a
-                                    href="mailto:innovate.a2z@gmail.com"
+                                    href="mailto:innovateweddingcompany@gmail.com"
                                     className="hover:text-primary transition"
                                 >
-                                    innovate.a2z@gmail.com
+                                    innovateweddingcompany@gmail.com
                                 </a>
                             </li>
                             <li className="flex gap-2 items-start">

@@ -36,7 +36,7 @@ const ServiceSection = () => {
                 {/* Heading */}
 
                 <div className="text-center mb-20">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-foreground uppercase inline-block border-b border-primary pb-5">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl tracking-[0.2em] text-foreground uppercase font-bold inline-block border-b border-primary pb-5">
                         What We Offer
                     </h2>
                 </div>
