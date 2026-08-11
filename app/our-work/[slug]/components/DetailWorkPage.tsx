@@ -10,7 +10,7 @@ type Props = {
 
 const WorkDetailPage: React.FC<Props> = ({ data }) => {
 
-    console.log('data--->', data)
+    // console.log('data--->', data)
 
     // 🔥 MEDIA BUILD (FIXED VIDEO + SAFE)
     const media = [
@@ -164,7 +164,7 @@ const WorkDetailPage: React.FC<Props> = ({ data }) => {
 
             {/* META */}
             <section className="max-w-5xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-6 text-center md:text-left">
-                <div>
+                {/* <div>
                     <p className="text-xs text-primary uppercase">Client</p>
                     <p className="text-foreground">{data.title}</p>
                 </div>
@@ -175,7 +175,7 @@ const WorkDetailPage: React.FC<Props> = ({ data }) => {
                 <div>
                     <p className="text-xs text-primary uppercase">Service</p>
                     <p className="text-foreground">{data.service}</p>
-                </div>
+                </div> */}
             </section>
 
             {/* STORY */}

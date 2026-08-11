@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { FaInstagram, FaYoutube, FaFacebook, FaEnvelope } from "react-icons/fa"
 import { FaLocationCrosshairs, FaPhone } from "react-icons/fa6"
@@ -15,9 +16,15 @@ const Footer = () => {
                     {/* BRAND */}
 
                     <div>
-                        <h3 className="text-lg md:text-xl text-background mb-4 tracking-wide">
-                            Innovate Wedding Company
-                        </h3>
+                        <Link href="/">
+                            <Image
+                                src="/innovate logo white.png"
+                                alt="Innovate Logo"
+                                width={160}
+                                height={60}
+                                className="h-auto w-auto transition-all duration-500 mb-5"
+                            />
+                        </Link>
 
                         <p className="text-sm leading-relaxed text-secondary/80 max-w-sm">
                             A full-service creative company specializing in weddings,

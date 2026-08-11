@@ -8,9 +8,9 @@ const WorkGallerySection = ({ works }: any) => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                    {works?.map((work: any, index: number) => (
+                    {works?.map((work: any) => (
                         <Link
-                            key={index}
+                            key={work._id}
                             href={`/our-work/${work.slug}`}
                             className="group block"
                         >
@@ -18,13 +18,17 @@ const WorkGallerySection = ({ works }: any) => {
 
                                 <div className="relative h-[300px] overflow-hidden">
 
-                                    {work.coverImage?.asset?.url && (
+                                    {work.coverImage?.asset?.url ? (
                                         <Image
                                             src={work.coverImage.asset.url}
                                             alt={work.title}
                                             fill
                                             className="object-cover transition duration-700 group-hover:scale-110"
                                         />
+                                    ) : (
+                                        <div className="w-full h-full bg-gray-200 flex items-center justify-center text-sm text-gray-500">
+                                            No Image
+                                        </div>
                                     )}
 
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
@@ -34,12 +38,18 @@ const WorkGallerySection = ({ works }: any) => {
                                             {work.title}
                                         </h3>
 
-                                        <p className="text-sm opacity-80">
+                                        {/* <p className="text-sm opacity-80">
                                             {work.location}
+                                        </p> */}
+
+                                        <p className="text-sm opacity-80">
+                                            {work.description
+                                                ? `${work.description.slice(0, 60)}${work.description.length > 60 ? "..." : ""}`
+                                                : "Explore this category"}
                                         </p>
 
                                         <p className="text-xs mt-2 tracking-wide text-primary">
-                                            View Project →
+                                            Explore Gallery →
                                         </p>
                                     </div>
 

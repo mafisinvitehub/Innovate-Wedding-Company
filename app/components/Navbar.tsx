@@ -55,10 +55,11 @@ export default function Navbar() {
 
                 <Link href="/">
                     <Image
-                        src="/temp-images/innovate-logo.png"
+                        src="/innovate logo.png"
                         alt="Innovate Logo"
                         width={160}
                         height={60}
+                        className="h-auto w-auto transition-all duration-500"
                     />
                 </Link>
 
