@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import HomePage from "./HomeComponent/HomePage";
 
 export const metadata: Metadata = {
@@ -10,14 +11,46 @@ export const metadata: Metadata = {
     "wedding photography nagercoil",
     "event management nagercoil",
     "tamil nadu wedding planners",
-    "south india wedding company"
+    "south india wedding company",
   ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Innovate Wedding Company",
+  alternateName: "Innovate Wedding Company Pvt Ltd",
+  url: "https://innovateweddingcompany.com/",
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Innovate Wedding Company Pvt Ltd",
+  url: "https://innovateweddingcompany.com/",
+  logo: "https://innovateweddingcompany.com/icon.png",
 };
 
 export default function Home() {
   return (
-    <div>
+    <>
+      <Script
+        id="website-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
+        }}
+      />
+
+      <Script
+        id="organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+
       <HomePage />
-    </div>
+    </>
   );
 }
