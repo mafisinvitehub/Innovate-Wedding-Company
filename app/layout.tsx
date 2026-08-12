@@ -35,7 +35,35 @@ export const metadata: Metadata = {
     follow: true,
   },
 
-  // OG + Twitter here
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://innovateweddingcompany.com/",
+    siteName: "Innovate Wedding Company Pvt Ltd",
+    title: "Innovate Wedding Company Pvt Ltd | Wedding & Event Management",
+    description:
+      "Premium wedding planning, event management and luxury wedding services across Tamil Nadu.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Innovate Wedding Company Pvt Ltd",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Innovate Wedding Company Pvt Ltd | Wedding & Event Management",
+    description:
+      "Premium wedding planning, event management and luxury wedding services across Tamil Nadu.",
+    images: ["/og-image.png"],
+  },
+
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
