@@ -21,21 +21,63 @@ export default function Navbar() {
 
     useEffect(() => {
 
+        let ticking = false;
+        let locked = false;
+        let lockTimeout: ReturnType<typeof setTimeout> | null = null;
+
+        const HIDE_AT = 140;
+        const SHOW_AT = 80;
+
+        const updateLogoState = () => {
+
+            if (!locked && window.innerWidth >= 768) {
+
+                const currentScrollY = window.scrollY;
+
+                setHideLogo((prev) => {
+
+                    if (!prev && currentScrollY > HIDE_AT) {
+                        // logo hide aaguthu -> header height maarum,
+                        // andha maatram vachu scrollY thana shift aagum,
+                        // so andha transition (500ms) mudiyara varaikkum lock pannu
+                        locked = true;
+                        if (lockTimeout) clearTimeout(lockTimeout);
+                        lockTimeout = setTimeout(() => { locked = false; }, 550);
+                        return true;
+                    }
+
+                    if (prev && currentScrollY < SHOW_AT) {
+                        locked = true;
+                        if (lockTimeout) clearTimeout(lockTimeout);
+                        lockTimeout = setTimeout(() => { locked = false; }, 550);
+                        return false;
+                    }
+
+                    return prev;
+
+                });
+
+            }
+
+            ticking = false;
+
+        };
+
         const handleScroll = () => {
 
-            if (window.innerWidth >= 768) { // desktop only
-                if (window.scrollY > 120) {
-                    setHideLogo(true);
-                } else {
-                    setHideLogo(false);
-                }
+            if (!ticking) {
+                window.requestAnimationFrame(updateLogoState);
+                ticking = true;
             }
 
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
 
-        return () => window.removeEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            if (lockTimeout) clearTimeout(lockTimeout);
+        };
 
     }, []);
 
@@ -46,10 +88,12 @@ export default function Navbar() {
             {/* LOGO + HAMBURGER */}
 
             <div
+                style={{ overflowAnchor: "none" }}
                 className={`flex items-center md:justify-center justify-between px-6 overflow-hidden transition-all duration-500
-    ${hideLogo
-                        ? "max-h-0 opacity-0 -translate-y-5 py-0"
-                        : "max-h-[120px] opacity-100 translate-y-0 py-4"
+py-4 max-h-[120px] opacity-100 translate-y-0
+${hideLogo
+                        ? "md:max-h-0 md:opacity-0 md:-translate-y-5 md:py-0"
+                        : "md:max-h-[120px] md:opacity-100 md:translate-y-0 md:py-4"
                     }`}
             >
 

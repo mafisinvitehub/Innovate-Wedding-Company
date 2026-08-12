@@ -16,29 +16,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Innovate Wedding Company",
-  description: "Innovative wedding planning services",
+  title: {
+    default: "Innovate Wedding Company Pvt Ltd",
+    template: "%s | Innovate Wedding Company",
+  },
+  description: "Premium wedding planning and luxury event services in Tamil Nadu.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-
-      {/* ✅ FIX: move link inside head */}
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
         <Toaster position="top-right" />
         {children}

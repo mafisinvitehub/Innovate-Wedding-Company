@@ -1,7 +1,13 @@
-import React from 'react'
 import OurWorkPage from './components/OurWorkPage'
 import { allCategoriesQuery, allWorksQuery } from '@/lib/queries';
 import { client } from '@/lib/sanity';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Our Wedding Works | Nagercoil Wedding Portfolio",
+    description:
+        "View our luxury wedding portfolio including photography, videography and event management projects across Nagercoil and Tamil Nadu.",
+};
 
 const OurWork = async () => {
     // const works = await client.fetch(allWorksQuery);
