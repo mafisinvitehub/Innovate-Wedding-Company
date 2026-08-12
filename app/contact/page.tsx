@@ -4,9 +4,9 @@ import ContactPage from "./component/ContactPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact Best Wedding Planners in Nagercoil",
+    title: "Contact Innovate Wedding Company | Nagercoil",
     description:
-        "Contact Innovate Wedding Company in Nagercoil for premium wedding planning, photography and event management services.",
+        "Get in touch with Innovate Wedding Company for premium wedding planning, photography, videography and event management services in Nagercoil and across Tamil Nadu.",
 };
 
 export default async function Contact() {

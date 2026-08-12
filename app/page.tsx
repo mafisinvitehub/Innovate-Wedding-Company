@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import HomePage from "./HomeComponent/HomePage";
 
 export const metadata: Metadata = {
-  title: "Best Wedding Planners in Nagercoil | Innovate Wedding Company Pvt Ltd",
+  title: "Best Wedding Planners in Nagercoil | Innovate Wedding Company",
   description:
-    "Innovate Wedding Company is the best wedding planner in Nagercoil offering photography, videography, catering, and full event management services across Tamil Nadu.",
+    "Innovate Wedding Company offers premium wedding planning, photography, videography, catering and complete event management services in Nagercoil and across Tamil Nadu.",
   keywords: [
     "best wedding planners in nagercoil",
     "wedding photography nagercoil",

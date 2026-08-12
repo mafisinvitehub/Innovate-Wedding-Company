@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: "Our Wedding Works | Nagercoil Wedding Portfolio",
     description:
-        "View our luxury wedding portfolio including photography, videography and event management projects across Nagercoil and Tamil Nadu.",
+        "Explore Innovate Wedding Company's wedding portfolio featuring photography, videography and event management projects across Nagercoil and Tamil Nadu.",
 };
 
 const OurWork = async () => {

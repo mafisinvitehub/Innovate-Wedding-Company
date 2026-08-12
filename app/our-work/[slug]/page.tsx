@@ -20,8 +20,8 @@ export async function generateMetadata({
     }
 
     return {
-        title: `${data.title} Works in Nagercoil | Innovate Wedding Company`,
-        description: `Explore our ${data.title} works including photography, videography and event management in Nagercoil and Tamil Nadu.`,
+        title: `${data.title} | Innovate Wedding Company`,
+        description: `Explore ${data.title} by Innovate Wedding Company, featuring premium wedding photography, videography and event management across Nagercoil and Tamil Nadu.`,
     };
 }
 

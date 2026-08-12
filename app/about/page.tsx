@@ -2,9 +2,9 @@ import AboutPage from './components/AboutPage'
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Wedding Services in Nagercoil | Photography, Catering & Event Management",
+    title: "About Innovate Wedding Company | Wedding Experts in Nagercoil",
     description:
-        "Explore our premium wedding services in Nagercoil including photography, videography, catering, decoration and full event planning.",
+        "Learn about Innovate Wedding Company, a premium wedding and event management company based in Nagercoil, serving clients across Tamil Nadu.",
 };
 
 const About = () => {

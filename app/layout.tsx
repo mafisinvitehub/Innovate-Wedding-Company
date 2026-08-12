@@ -16,14 +16,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://innovateweddingcompany.com"),
+
   title: {
-    default: "Innovate Wedding Company Pvt Ltd",
+    default: "Innovate Wedding Company",
     template: "%s | Innovate Wedding Company",
   },
-  description: "Premium wedding planning and luxury event services in Tamil Nadu.",
-  icons: {
-    icon: "/icon.png",
+
+  description:
+    "Premium wedding planning, photography, videography and event management services in Nagercoil and across Tamil Nadu.",
+
+  alternates: {
+    canonical: "/",
   },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  // OG + Twitter here
 };
 
 export default function RootLayout({
