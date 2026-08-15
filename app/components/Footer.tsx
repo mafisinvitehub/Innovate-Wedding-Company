@@ -134,7 +134,6 @@ const Footer = () => {
                         </p>
 
                         {/* SOCIAL */}
-
                         {/* <div className="flex gap-4 mt-6 text-lg">
                             <a href="#" className="hover:text-primary transition">
                                 <FaInstagram />
