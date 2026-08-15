@@ -40,7 +40,7 @@ const AboutHeroSection = () => {
                 <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl group">
 
                     <Image
-                        src="/temp-images/about/about-hero-image.png"
+                        src="/images/temp/about.jpg"
                         alt="Built on passion. Driven by creativity"
                         fill
                         className="object-cover transition duration-700 ease-out group-hover:scale-105"

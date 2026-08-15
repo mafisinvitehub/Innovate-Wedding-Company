@@ -9,14 +9,14 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 const slides = [
-    { img: "/temp-images/home/inn1.jpg" },
-    { img: "/temp-images/home/inn2.jpg" },
-    { img: "/temp-images/home/inn3.jpg" },
-    { img: "/temp-images/home/inn4.jpg" },
-    { img: "/temp-images/home/inn5.jpg" },
-    { img: "/temp-images/home/inn6.jpg" },
-    { img: "/temp-images/home/inn7.jpg" },
-    { img: "/temp-images/home/inn8.jpg" },
+    { img: "/images/home/workspace (1).jpg" },
+    { img: "/images/home/workspace (2).jpg" },
+    { img: "/images/home/workspace (3).jpg" },
+    { img: "/images/home/workspace (4).jpg" },
+    { img: "/images/home/workspace (5).jpg" },
+    { img: "/images/home/workspace (6).jpg" },
+    { img: "/images/home/workspace (7).jpg" },
+    { img: "/images/home/workspace (8).jpg" },
 ];
 
 const HeroSection = () => {

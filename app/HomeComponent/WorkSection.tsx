@@ -58,9 +58,9 @@ const WorkSection = ({ works }: any) => {
                                 {limitedWorks[0].title}
                             </h3>
                             <p className="text-sm tracking-wide">
-                                {limitedWorks[0].location}
+                                {limitedWorks[0].description?.slice(0, 40)}
                             </p>
-                            <p className="text-xs mt-1 opacity-80">View Project →</p>
+                            <p className="text-xs mt-1 opacity-80">Explore Gallery →</p>
                         </div>
 
                     </Link>
@@ -69,7 +69,7 @@ const WorkSection = ({ works }: any) => {
 
                     {limitedWorks.slice(1).map((work: any, index: number) => (
                         <Link
-                            key={index}
+                            key={work._id}
                             href={`/our-work/${work.slug}`}
                             className="group relative overflow-hidden rounded-xl"
                         >
@@ -91,9 +91,9 @@ const WorkSection = ({ works }: any) => {
                                     {work.title}
                                 </h3>
                                 <p className="text-xs tracking-wide">
-                                    {work.location}
+                                    {work.description?.slice(0, 40)}
                                 </p>
-                                <p className="text-xs mt-1 opacity-80">View Project →</p>
+                                <p className="text-xs mt-1 opacity-80">Explore Gallery →</p>
                             </div>
 
                         </Link>

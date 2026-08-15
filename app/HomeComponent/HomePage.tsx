@@ -5,10 +5,10 @@ import HeroSection from './HeroSection'
 import ServiceSection from './ServiceSection'
 import TestimonialSection from './TestimonialSection'
 import WorkSection from './WorkSection'
-import { allWorksQuery } from '@/lib/queries'
+import { featuredCategoriesQuery } from '@/lib/queries'
 
 const HomePage = async () => {
-    const works = await client.fetch(allWorksQuery)
+    const works = await client.fetch(featuredCategoriesQuery)
 
     return (
         <div>

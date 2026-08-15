@@ -4,19 +4,14 @@ import { useEffect, useState } from "react"
 
 const testimonials = [
     {
-        name: "Arjun & Nisha",
-        text: "From planning to execution, everything was handled perfectly. The team made our wedding completely stress-free and truly memorable.",
-        location: "Chennai",
+        name: "Shiyana & Niyas",
+        text: "Amazing photography and excellent service! The team was very friendly and professional. They captured our special moments beautifully. Highly recommended! ",
+        location: "Manavilai",
     },
     {
-        name: "Rahul Enterprises",
-        text: "We worked with them for our corporate event and digital promotions. The professionalism, creativity, and execution were outstanding.",
-        location: "Madurai",
-    },
-    {
-        name: "Karthik & Divya",
-        text: "Photography, videography, and overall coordination — everything was top-notch. The final output exceeded our expectations.",
-        location: "Coimbatore",
+        name: "Ashik & Samiha",
+        text: "Best wedding company in Nagercoil ",
+        location: "Nagercoil",
     },
 ]
 

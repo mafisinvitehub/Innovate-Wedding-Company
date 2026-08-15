@@ -7,16 +7,15 @@ import type { Metadata } from "next";
 export async function generateMetadata({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-    const { slug } = params;
+
+    const { slug } = await params; // 🔥 FIX
 
     const data = await client.fetch(singleCategoryQuery, { slug });
 
     if (!data) {
-        return {
-            title: "Our Work",
-        };
+        return { title: "Our Work" };
     }
 
     return {

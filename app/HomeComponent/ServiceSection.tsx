@@ -8,22 +8,22 @@ const services = [
     {
         title: "Complete Event Management",
         desc: "From weddings and corporate events to private celebrations, we plan and execute every detail seamlessly to deliver a stress-free and premium experience.",
-        img: "/temp-images/services/event-management.png",
+        img: "/images/temp/event-management.jpg",
     },
     {
         title: "Photography, Videography & Drone",
         desc: "We capture every moment with cinematic storytelling, high-end photography, videography, and drone coverage to create visuals that last forever.",
-        img: "/temp-images/services/photography.png",
+        img: "/images/temp/photography.jpg",
     },
     {
         title: "Creative & Digital Solutions",
         desc: "From reels and content creation to digital marketing and website development, we help you build a strong and modern digital presence.",
-        img: "/temp-images/services/digital-marketing.png",
+        img: "/images/temp/creative.jpg",
     },
     {
         title: "Catering, Bridal & Custom Services",
         desc: "Multi-cuisine catering, bridal makeup, rental accessories, and surprise planning — everything you need to complete your event, all in one place.",
-        img: "/temp-images/services/catering.png",
+        img: "/images/temp/custom-services.jpg",
     },
 ];
 

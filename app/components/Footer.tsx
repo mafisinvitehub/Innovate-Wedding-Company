@@ -130,7 +130,7 @@ const Footer = () => {
                         </ul>
 
                         <p className="mt-4 text-xs text-secondary/60">
-                            Available across Tamil Nadu for weddings, events, and digital projects.
+                            Capturing love stories and creating digital experiences everywhere.
                         </p>
 
                         {/* SOCIAL */}
