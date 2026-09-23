@@ -88,8 +88,12 @@ const ContactPage: React.FC<Props> = ({ data }) => {
     return (
         <div className="bg-background">
 
+            {/* ===================================================== */}
             {/* HERO */}
+            {/* ===================================================== */}
+
             <section className="py-24 text-center px-6">
+
                 <p className="text-sm tracking-[4px] text-primary uppercase mb-6">
                     Contact
                 </p>
@@ -99,223 +103,400 @@ const ContactPage: React.FC<Props> = ({ data }) => {
                 </h1>
 
                 <p className="text-foreground/70 max-w-xl mx-auto">
-                    Tell us about your event, project, or idea — we’ll craft a modern, fun, and luxurious experience tailored just for you.
+                    Tell us about your event, project, or idea — we’ll craft a
+                    modern, fun, and luxurious experience tailored just for you.
                 </p>
 
                 <div className="mt-8 w-16 h-[2px] bg-primary mx-auto" />
+
             </section>
 
-            {/* MAIN */}
-            <section className="max-w-7xl mx-auto px-6 pb-24 grid lg:grid-cols-2 gap-16">
 
-                {/* LEFT INFO */}
-                <div className="space-y-10">
+            {/* ===================================================== */}
+            {/* FOUNDER SECTION - FULL WIDTH */}
+            {/* ===================================================== */}
 
-                    <div>
-                        <p className="text-xs text-primary uppercase mb-2">Founder</p>
-                        <p className="text-foreground text-lg">Mohammed Faizal Sulaiman</p>
+          <section className="max-w-7xl mx-auto px-6 pb-16">
+
+    {/* <p className="text-sm tracking-[4px] text-primary uppercase mb-5">
+        Founder
+    </p> */}
+
+    <div className="w-full bg-secondary/40 border border-primary/20 rounded-2xl overflow-hidden shadow-xl">
+
+        <div className="flex flex-col md:flex-row">
+
+            {/* FOUNDER IMAGE */}
+            <div className="md:w-[35%] lg:w-[32%] h-[450px]">
+                <img
+                    src="/Founder.PNG"
+                    alt="Mohammed Faizal Sulaiman"
+                    className="w-full h-full object-cover object-center"
+                />
+            </div>
+
+            {/* FOUNDER INFORMATION */}
+            <div className="flex-1 flex items-center px-8 md:px-10 lg:px-12 py-8">
+
+                <div>
+
+                    <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground leading-tight">
+                        Mohammed Faizal Sulaiman
+                    </p>
+
+                    <p className="text-sm md:text-base text-primary uppercase tracking-[3px] mt-3">
+                        Founder
+                    </p>
+
+                    <p className="text-sm md:text-base text-foreground/60 mt-2">
+                        Nagercoil, India
+                    </p>
+
+                    <div className="w-14 h-[2px] bg-primary mt-4 mb-4" />
+
+                    {/* <p className="text-sm md:text-base text-foreground/70 italic">
+                        "Every celebration deserves to be remembered beautifully."
+                    </p> */}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+            {/* ===================================================== */}
+            {/* CONTACT INFORMATION + FORM */}
+            {/* ===================================================== */}
+
+            <section className="max-w-7xl mx-auto px-6 pb-24">
+
+                <div className="grid lg:grid-cols-2 gap-16">
+
+
+                    {/* ================================================= */}
+                    {/* LEFT - CONTACT INFORMATION */}
+                    {/* ================================================= */}
+
+                    <div className="space-y-10">
+
+                        {/* REACH US THROUGH */}
+                        <div>
+
+                            <p className="text-xs text-primary uppercase mb-3">
+                                Reach Us Through
+                            </p>
+
+                            <a
+                                href={`tel:${data.phone}`}
+                                className="hover:text-primary transition"
+                            >
+                                <div className="flex items-center gap-3 mb-2">
+
+                                    <FaPhone className="text-primary" />
+
+                                    <p className="text-foreground text-lg">
+                                        {data.phone}
+                                    </p>
+
+                                </div>
+                            </a>
+
+
+                            <a href={`mailto:${data.email}`}>
+
+                                <div className="flex items-center gap-3 mb-2">
+
+                                    <FaEnvelope className="text-primary" />
+
+                                    <p className="text-foreground text-lg">
+                                        {data.email}
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+
+                            <a
+                                href="https://www.instagram.com/innovate_weddings/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+
+                                <div className="flex items-center gap-3 mb-2">
+
+                                    <FaInstagram className="text-primary" />
+
+                                    <p className="text-foreground text-lg">
+                                        innovate_wedding
+                                    </p>
+
+                                </div>
+
+                            </a>
+
+                        </div>
+
+
+                        {/* LOCATION */}
+                        <div>
+
+                            <p className="text-xs text-primary uppercase mb-2">
+                                Location
+                            </p>
+
+                            <p className="text-foreground text-lg">
+                                {data.address}
+                            </p>
+
+                        </div>
+
+
+                        {/* ADDITIONAL INFORMATION */}
+                        <div className="text-foreground/60 text-sm pt-6 max-w-sm space-y-2">
+
+                            <p>
+                                We usually respond within 24 hours. Let’s create
+                                something modern, fun, and truly premium together.
+                            </p>
+
+                            <p>
+                                Available Monday – Saturday: 10 AM – 7 PM <br />
+                                Sunday: By Appointment Only
+                            </p>
+
+                            <p>
+                                We handle weddings, corporate events,
+                                photography, digital solutions, and more —
+                                all under one roof.
+                            </p>
+
+                        </div>
+
                     </div>
 
-                    <div>
-                        <p className="text-xs text-primary uppercase mb-3">Reach Us Through</p>
-                        {/* <p className="text-xs text-primary uppercase mb-2">Phone</p> */}
-                        <a
-                            href={`tel:${data.phone}`}
-                            className="hover:text-primary transition"
-                        >
-                            <div className="flex items-center gap-3 mb-2">
-                                <FaPhone className="text-primary" />
-                                <p className="text-foreground text-lg">{data.phone}</p>
-                            </div>
-                        </a>
-                        <a href={`mailto:${data.email}`}                        >
-                            <div className="flex items-center gap-3 mb-2">
-                                <FaEnvelope className="text-primary" />
-                                <p className="text-foreground text-lg">{data.email}</p>
-                            </div>
-                        </a>
-                        <a href="https://www.instagram.com/innovate_weddings/"  >
-                            <div className="flex items-center gap-3 mb-2">
-                                <FaInstagram className="text-primary" />
-                                <p className="text-foreground text-lg">innovate_wedding</p>
-                            </div>
-                        </a>
-                    </div>
 
-                    {/* <div>
-                        <p className="text-xs text-primary uppercase mb-2">Email</p>
-                        <p className="text-foreground text-lg">{data.email}</p>
-                    </div> */}
+                    {/* ================================================= */}
+                    {/* RIGHT - CONTACT FORM */}
+                    {/* ================================================= */}
 
                     <div>
-                        <p className="text-xs text-primary uppercase mb-2">Location</p>
-                        <p className="text-foreground text-lg">
-                            {data.address}
-                        </p>
-                    </div>
 
-                    <div className="text-foreground/60 text-sm pt-6 max-w-sm space-y-2">
-                        <p>
-                            We usually respond within 24 hours. Let’s create something modern, fun, and truly premium together.
-                        </p>
-                        <p>
-                            Available Monday – Saturday: 10 AM – 7 PM <br />
-                            Sunday: By Appointment Only
-                        </p>
-                        <p>
-                            We handle weddings, corporate events, photography, digital solutions, and more — all under one roof.
-                        </p>
+                        <div className="bg-secondary/40 backdrop-blur-md border border-primary/20 rounded-2xl p-8 shadow-xl">
+
+                            <form
+                                onSubmit={handleSubmit}
+                                className="space-y-6"
+                            >
+
+                                {/* NAME */}
+                                <div>
+
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Your Name"
+                                        value={form.name}
+                                        onChange={handleChange}
+                                        className="w-full bg-transparent border-b border-primary/30 py-3 focus:outline-none focus:border-primary transition"
+                                    />
+
+                                    {errors.name && (
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.name}
+                                        </p>
+                                    )}
+
+                                </div>
+
+
+                                {/* EMAIL */}
+                                <div>
+
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email Address"
+                                        value={form.email}
+                                        onChange={handleChange}
+                                        className="w-full bg-transparent border-b border-primary/30 py-3 focus:outline-none focus:border-primary transition"
+                                    />
+
+                                    {errors.email && (
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.email}
+                                        </p>
+                                    )}
+
+                                </div>
+
+
+                                {/* PHONE */}
+                                <div>
+
+                                    <input
+                                        type="text"
+                                        name="phone"
+                                        placeholder="Phone Number"
+                                        value={form.phone}
+                                        onChange={handleChange}
+                                        className="w-full bg-transparent border-b border-primary/30 py-3 focus:outline-none focus:border-primary transition"
+                                    />
+
+                                    {errors.phone && (
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.phone}
+                                        </p>
+                                    )}
+
+                                </div>
+
+
+                                {/* SERVICE */}
+                                <div className="relative">
+
+                                    <select
+                                        name="service"
+                                        value={form.service}
+                                        onChange={(e) =>
+                                            setForm({
+                                                ...form,
+                                                service: e.target.value,
+                                            })
+                                        }
+                                        className={`
+                                            w-full
+                                            bg-transparent
+                                            border-0
+                                            border-b
+                                            border-primary/30
+                                            py-3
+                                            px-0
+                                            text-sm
+                                            focus:outline-none
+                                            focus:ring-0
+                                            focus:border-primary
+                                            transition
+                                            cursor-pointer
+                                            appearance-none
+                                            ${
+                                                form.service
+                                                    ? "text-foreground"
+                                                    : "text-foreground/50"
+                                            }
+                                        `}
+                                    >
+
+                                        <option value="" disabled hidden>
+                                            Select Service
+                                        </option>
+
+                                        <option value="Wedding">
+                                            Wedding
+                                        </option>
+
+                                        <option value="Corporate Event">
+                                            Corporate Event
+                                        </option>
+
+                                        <option value="Photography / Video">
+                                            Photography / Video
+                                        </option>
+
+                                        <option value="Digital / Website">
+                                            Digital / Website
+                                        </option>
+
+                                    </select>
+
+
+                                    {/* ARROW */}
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-primary/70 pointer-events-none"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        strokeWidth={2}
+                                    >
+
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M19 9l-7 7-7-7"
+                                        />
+
+                                    </svg>
+
+
+                                    {errors.service && (
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.service}
+                                        </p>
+                                    )}
+
+                                </div>
+
+
+                                {/* MESSAGE */}
+                                <div>
+
+                                    <textarea
+                                        name="message"
+                                        placeholder="Tell us about your event, shoot, or project..."
+                                        rows={4}
+                                        value={form.message}
+                                        onChange={handleChange}
+                                        className="w-full bg-transparent border-b border-primary/30 py-3 focus:outline-none focus:border-primary transition"
+                                    />
+
+                                    {errors.message && (
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.message}
+                                        </p>
+                                    )}
+
+                                </div>
+
+
+                                {/* SUBMIT */}
+                                <button
+                                    type="submit"
+                                    disabled={loading}
+                                    className="w-full bg-primary text-foreground py-3 rounded-lg hover:scale-[1.02] hover:shadow-md transition cursor-pointer disabled:opacity-50"
+                                >
+                                    {loading
+                                        ? "Sending..."
+                                        : "Send Message"}
+                                </button>
+
+                            </form>
+
+                        </div>
+
                     </div>
 
                 </div>
 
-                {/* RIGHT FORM */}
-                <div className="bg-secondary/40 backdrop-blur-md border border-primary/20 rounded-2xl p-8 shadow-xl">
-
-                    <form onSubmit={handleSubmit} className="space-y-6">
-
-                        <div>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                value={form.name}
-                                onChange={handleChange}
-                                className="w-full bg-transparent border-b border-primary/30 py-3 focus:outline-none focus:border-primary transition"
-                            />
-                            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
-                        </div>
-
-                        <div>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Email Address"
-                                value={form.email}
-                                onChange={handleChange}
-                                className="w-full bg-transparent border-b border-primary/30 py-3 focus:outline-none focus:border-primary transition"
-                            />
-                            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                        </div>
-
-                        <div>
-                            <input
-                                type="text"
-                                name="phone"
-                                placeholder="Phone Number"
-                                value={form.phone}
-                                onChange={handleChange}
-                                className="w-full bg-transparent border-b border-primary/30 py-3 focus:outline-none focus:border-primary transition"
-                            />
-                            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-                        </div>
-
-                        <div className="relative">
-
-                            <select
-                                name="service"
-                                value={form.service}
-                                onChange={(e) =>
-                                    setForm({ ...form, service: e.target.value })
-                                }
-                                className={`
-            w-full
-            bg-transparent
-            border-0
-            border-b
-            border-primary/30
-            py-3
-            px-0
-            text-sm
-            focus:outline-none
-            focus:ring-0
-            focus:border-primary
-            transition
-            cursor-pointer
-            appearance-none
-            ${form.service
-                                        ? "text-foreground"
-                                        : "text-foreground/50"
-                                    }
-        `}
-                            >
-                                <option value="" disabled hidden>
-                                    Select Service
-                                </option>
-
-                                <option value="Wedding">
-                                    Wedding
-                                </option>
-
-                                <option value="Corporate Event">
-                                    Corporate Event
-                                </option>
-
-                                <option value="Photography / Video">
-                                    Photography / Video
-                                </option>
-
-                                <option value="Digital / Website">
-                                    Digital / Website
-                                </option>
-                            </select>
-
-                            {/* PREMIUM MINIMAL ARROW */}
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-primary/70 pointer-events-none"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M19 9l-7 7-7-7"
-                                />
-                            </svg>
-
-                            {errors.service && (
-                                <p className="text-red-500 text-sm mt-1">
-                                    {errors.service}
-                                </p>
-                            )}
-
-                        </div>
-
-                        <div>
-                            <textarea
-                                name="message"
-                                placeholder="Tell us about your event, shoot, or project..."
-                                rows={4}
-                                value={form.message}
-                                onChange={handleChange}
-                                className="w-full bg-transparent border-b border-primary/30 py-3 focus:outline-none focus:border-primary transition"
-                            />
-                            {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
-                        </div>
-
-                        <button
-                            type="submit"
-                            disabled={loading}
-                            className="w-full bg-primary text-foreground py-3 rounded-lg hover:scale-[1.02] hover:shadow-md transition cursor-pointer disabled:opacity-50"
-                        >
-                            {loading ? "Sending..." : "Send Message"}
-                        </button>
-
-                    </form>
-
-                </div>
-
             </section>
 
-            {/* MAP (UNCHANGED) */}
+
+            {/* ===================================================== */}
+            {/* MAP */}
+            {/* ===================================================== */}
+
             <section className="w-full py-24 px-6 bg-background">
+
                 <div className="max-w-6xl mx-auto">
 
                     {/* HEADER */}
                     <div className="text-center mb-16">
+
                         <p className="text-sm tracking-[4px] text-primary uppercase mb-6">
                             Visit Us
                         </p>
@@ -325,11 +506,15 @@ const ContactPage: React.FC<Props> = ({ data }) => {
                         </h2>
 
                         <p className="text-foreground/70 max-w-xl mx-auto">
-                            Visit our studio to discuss your ideas in person. Experience our creative approach and let’s craft something truly exceptional together.
+                            Visit our studio to discuss your ideas in person.
+                            Experience our creative approach and let’s craft
+                            something truly exceptional together.
                         </p>
 
                         <div className="mt-8 w-16 h-[2px] bg-primary mx-auto" />
+
                     </div>
+
 
                     {/* MAP CARD */}
                     <div className="relative rounded-2xl overflow-hidden border border-border shadow-sm group">
@@ -342,6 +527,7 @@ const ContactPage: React.FC<Props> = ({ data }) => {
                             className="absolute inset-0 z-10"
                         />
 
+
                         {/* MAP */}
                         <iframe
                             src="https://www.google.com/maps?q=8.160193704178129,77.4279139895681&hl=en&z=15&output=embed"
@@ -349,18 +535,23 @@ const ContactPage: React.FC<Props> = ({ data }) => {
                             loading="lazy"
                         />
 
+
                         {/* BOTTOM INFO BAR */}
                         <div className="absolute bottom-0 left-0 right-0 z-20 bg-background/90 backdrop-blur-md border-t border-border px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
 
                             {/* ADDRESS */}
                             <div>
+
                                 <p className="text-xs uppercase tracking-widest text-primary mb-1">
                                     Address
                                 </p>
+
                                 <p className="text-sm text-foreground">
                                     {data.address}
                                 </p>
+
                             </div>
+
 
                             {/* CTA */}
                             <div className="text-sm font-medium text-primary">
@@ -372,14 +563,18 @@ const ContactPage: React.FC<Props> = ({ data }) => {
                     </div>
 
                 </div>
+
             </section>
 
+
             {/* CLOSING */}
-            {/* <section className="py-20 text-center px-6">
+            {/*
+            <section className="py-20 text-center px-6">
                 <p className="text-foreground/70">
                     We usually respond within 24 hours.
                 </p>
-            </section> */}
+            </section>
+            */}
 
         </div>
     );
