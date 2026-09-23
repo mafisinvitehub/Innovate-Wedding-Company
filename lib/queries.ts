@@ -131,3 +131,25 @@ export const featuredCategoriesQuery = `
   }
 }
 `;
+
+export const singleEmployeeQuery = `
+*[_type == "employee" && slug.current == $slug][0]{
+  name,
+  role,
+  bio,
+  skills,
+  phone,
+  phoneVisibility,
+  phoneAction,
+  isActive,
+  photo{
+    asset->{url}
+  },
+  socialLinks,
+  gallery[]{
+    _type,
+    asset->{url},
+    url
+  }
+}
+`;
