@@ -139,9 +139,13 @@ export const singleEmployeeQuery = `
   bio,
   skills,
   phone,
+  email,
   phoneVisibility,
   phoneAction,
   isActive,
+  address,
+  blood,
+  dob,
   photo{
     asset->{url}
   },
