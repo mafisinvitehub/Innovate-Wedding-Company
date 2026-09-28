@@ -1432,7 +1432,7 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                     <FaPhoneAlt/>
                 )}
 
-                {data.phoneAction === "whatsapp" ? "WhatsApp" : "Call"}
+                {data.phone}
             </a>
         )}
 
@@ -1473,7 +1473,7 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                 "
             >
                 <FaEnvelope />
-                Mail
+                {data.email}
             </a>
         )}
 
