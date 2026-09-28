@@ -1381,22 +1381,29 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
 ================================================= */}
 
 {(data.email || data.phone) && (
-    <div className="
-        fixed
-        bottom-0
-        left-0
-        w-full
-        z-[100]
-        bg-background/80
-        backdrop-blur-lg
-        border-t
-        border-primary/10
-        px-4
-        py-3
-        flex
-        justify-center
-        gap-4
-    ">
+    <div
+        className="
+            fixed
+            bottom-0
+            left-0
+            w-full
+            z-[100]
+            bg-background/80
+            backdrop-blur-lg
+            border-t
+            border-primary/10
+            px-2
+            sm:px-4
+            py-3
+            flex
+            flex-wrap
+            items-center
+            justify-center
+            gap-x-2
+            gap-y-2
+            sm:gap-4
+        "
+    >
 
         {/* PHONE */}
         {data.phone && data.phoneVisibility === "show" && (
@@ -1413,10 +1420,13 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                         : undefined
                 }
                 className="
-                    flex
+                    inline-flex
                     items-center
-                    gap-2
-                    px-4
+                    justify-center
+                    gap-1
+                    sm:gap-2
+                    px-2
+                    sm:px-4
                     py-2
                     rounded-full
                     border
@@ -1424,32 +1434,45 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                     hover:bg-primary
                     hover:text-background
                     transition
+                    text-[10px]
+                    sm:text-sm
+                    whitespace-nowrap
+                    max-w-full
                 "
             >
                 {data.phoneAction === "whatsapp" ? (
-                    <FaWhatsapp />
+                    <FaWhatsapp className="shrink-0" size={12} />
                 ) : (
-                    <FaPhoneAlt/>
+                    <FaPhoneAlt className="shrink-0" size={12} />
                 )}
 
-                {data.phone}
+                <span>{data.phone}</span>
             </a>
         )}
 
         {/* MASK - NO CLICK */}
         {data.phone && data.phoneVisibility === "mask" && (
-            <span className="
-                flex
-                items-center
-                gap-2
-                px-4
-                py-2
-                rounded-full
-                border
-                border-primary/30
-                opacity-70
-            ">
-                <FaPhoneAlt />
+            <span
+                className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    gap-1
+                    sm:gap-2
+                    px-2
+                    sm:px-4
+                    py-2
+                    rounded-full
+                    border
+                    border-primary/30
+                    opacity-70
+                    text-[10px]
+                    sm:text-sm
+                    whitespace-nowrap
+                    max-w-full
+                "
+            >
+                <FaPhoneAlt className="shrink-0" size={12} />
                 {getMaskedPhone()}
             </span>
         )}
@@ -1459,10 +1482,13 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
             <a
                 href={`mailto:${data.email}`}
                 className="
-                    flex
+                    inline-flex
                     items-center
-                    gap-2
-                    px-4
+                    justify-center
+                    gap-1
+                    sm:gap-2
+                    px-2
+                    sm:px-4
                     py-2
                     rounded-full
                     border
@@ -1470,15 +1496,23 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                     hover:bg-primary
                     hover:text-background
                     transition
+                    text-[10px]
+                    sm:text-sm
+                    max-w-full
+                    min-w-0
+                    break-all
+                    sm:break-normal
                 "
             >
-                <FaEnvelope />
-                {data.email}
+                <FaEnvelope className="shrink-0" size={12} />
+                <span>{data.email}</span>
             </a>
         )}
 
     </div>
 )}
+
+
 
 
 
