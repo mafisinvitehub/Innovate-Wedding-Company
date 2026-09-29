@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@sanity/client": "^7.22.0",
-    "framer-motion": "^12.36.0",
+    "framer-motion": "^13.4.5",
     "next": "16.1.6",
     "nodemailer": "^8.0.7",
     "react": "19.2.3",
