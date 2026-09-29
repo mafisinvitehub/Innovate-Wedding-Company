@@ -166,7 +166,7 @@ const cinematicStyles = `
             personReveal
             2s
             cubic-bezier(0.16, 1, 0.3, 1)
-            1s
+            1.1s
             both;
 
         transform-origin: center bottom;
