@@ -100,7 +100,7 @@ const ServicesDetailedSection = () => {
 
                                 <ul className="mt-3 text-sm text-foreground/60 space-y-1">
                                     {service.points.map((point: string, i: number) => (
-                                        <li className="flex items-start gap-2">
+                                        <li key={i} className="flex items-start gap-2">
                                             <span className="text-primary">✔</span>
                                             <span>{point}</span>
                                         </li>
