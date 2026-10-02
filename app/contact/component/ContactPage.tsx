@@ -129,7 +129,7 @@ const ContactPage: React.FC<Props> = ({ data }) => {
             {/* FOUNDER IMAGE */}
             <div className="md:w-[35%] lg:w-[32%] h-[450px]">
                 <img
-                    src="/Founder.PNG"
+                    src="/Founder.JPG"
                     alt="Mohammed Faizal Sulaiman"
                     className="w-full h-full object-cover object-center"
                 />

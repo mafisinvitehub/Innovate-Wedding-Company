@@ -1,6 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
-import { FaInstagram, FaYoutube, FaFacebook, FaEnvelope } from "react-icons/fa"
+import {
+    FaInstagram,
+    FaYoutube,
+    FaFacebook,
+    FaEnvelope,
+    FaLinkedin
+} from "react-icons/fa"
+
 import { FaLocationCrosshairs, FaPhone } from "react-icons/fa6"
 
 const Footer = () => {
@@ -127,6 +134,31 @@ const Footer = () => {
                                     innovate_weddings
                                 </a>
                             </li>
+
+                            <li className="flex gap-2 items-start">
+                                <FaLinkedin className="min-w-[1rem] mt-1" />
+                                <a
+                                    href="https://www.linkedin.com/company/innovate-wedding-company/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-primary transition"
+                                >
+                                    Innovate Wedding Company
+                                </a>
+                            </li>
+
+                            <li className="flex gap-2 items-start">
+                                <FaYoutube className="min-w-[1rem] mt-1" />
+                                <a
+                                    href="https://www.youtube.com/@InnovateWeddingCompany"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-primary transition"
+                                >
+                                    Innovate Wedding Company
+                                </a>
+                            </li>
+
                         </ul>
 
                         <p className="mt-4 text-xs text-secondary/60">
