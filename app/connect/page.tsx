@@ -14,8 +14,6 @@ import {
     FaExternalLinkAlt,
 } from "react-icons/fa";
 
-
-
 const links = [
     {
         title: "Website",
@@ -26,7 +24,7 @@ const links = [
     {
         title: "Call Us",
         description: "Get in touch with us",
-        href: "tel:+91 93610 35209",
+        href: "tel:+919361035209",
         icon: FaPhoneAlt,
     },
     {
@@ -35,13 +33,12 @@ const links = [
         href: "https://www.instagram.com/innovate.wedding.company.pvt?stkn=MTVlNWZ4aDRrYnB1Yg==",
         icon: FaInstagram,
     },
-     {
+    {
         title: "WhatsApp",
         description: "Chat with our team",
         href: "https://wa.me/+919361035209",
         icon: FaWhatsapp,
     },
-    
     {
         title: "Email",
         description: "Send us an email",
@@ -65,8 +62,7 @@ const links = [
         description: "Find us on Google Maps",
         href: "https://maps.app.goo.gl/qN4JdVhL2UaJ9SCt7",
         icon: FaMapMarkerAlt,
-    }
-   
+    },
 ];
 
 /* =========================================================
@@ -153,13 +149,12 @@ END:VCARD`;
                     relative
                     w-full
                     max-w-xl
+                    min-[2000px]:max-w-4xl
                     mx-auto
                     px-5
                     sm:px-6
-                    pt-4
-                    sm:pt-6
-                    pb-8
-                    sm:pb-10
+                    pt-0
+                    pb-4
                 "
             >
 
@@ -169,9 +164,47 @@ END:VCARD`;
 
                 <section className="text-center">
 
+                    {/* LOGO */}
+
+                    <div className="flex justify-center items-center">
+                        <a
+                            href="https://innovateweddingcompany.com/"
+                            aria-label="Go to Innovate Wedding Company home page"
+                            className="
+                                inline-flex
+                                items-center
+                                justify-center
+                                cursor-pointer
+                                transition-transform
+                                duration-300
+                                hover:scale-[1.02]
+                            "
+                        >
+                            <Image
+                                src="/logo.png"
+                                alt="Innovate Wedding Company"
+                                width={240}
+                                height={240}
+                                priority
+                                className="
+                                    w-44
+                                    h-44
+                                    sm:w-48
+                                    sm:h-48
+                                    md:w-52
+                                    md:h-52
+                                    object-contain
+                                "
+                            />
+                        </a>
+                    </div>
+
+
+                    {/* HEADING */}
+
                     <h1
                         className="
-                            mt-1
+                            -mt-2
                             text-3xl
                             sm:text-4xl
                             md:text-5xl
@@ -211,7 +244,7 @@ END:VCARD`;
                             items-center
                             justify-center
                             gap-3
-                            mt-4
+                            mt-3
                         "
                     >
 
@@ -237,7 +270,7 @@ END:VCARD`;
                     LINKS
                 ================================================= */}
 
-                <section className="mt-6 sm:mt-7">
+                <section className="mt-5 sm:mt-6">
 
                     <div className="space-y-3">
 
@@ -344,7 +377,6 @@ END:VCARD`;
 
                                 </a>
                             );
-
                         })}
 
                     </div>
@@ -356,7 +388,7 @@ END:VCARD`;
                     SAVE CONTACT
                 ================================================= */}
 
-                <section className="mt-4">
+                {/* <section className="mt-4">
 
                     <button
                         type="button"
@@ -388,7 +420,7 @@ END:VCARD`;
 
                     </button>
 
-                </section>
+                </section> */}
 
 
                 {/* =================================================
@@ -398,7 +430,7 @@ END:VCARD`;
                 <p
                     className="
                         text-center
-                        mt-5
+                        mt-4
                         text-[10px]
                         sm:text-xs
                         uppercase
