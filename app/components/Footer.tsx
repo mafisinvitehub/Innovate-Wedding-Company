@@ -109,10 +109,10 @@ const Footer = () => {
                             <li className="flex gap-2 items-start">
                                 <FaPhone className="min-w-[1rem] mt-1" />
                                 <a
-                                    href="tel:+919876543210"
+                                    href="tel:+919361035209"
                                     className="hover:text-primary transition"
                                 >
-                                    +91 98765 43210
+                                    +91 93610 35209
                                 </a>
                             </li>
 
