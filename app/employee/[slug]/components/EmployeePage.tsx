@@ -543,6 +543,8 @@ interface EmployeeData {
 
     role?: string;
 
+    tagline?: string;
+
     phone?: string;
 
     email?: string;
@@ -960,24 +962,106 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
         </h1>
 
 
-        {/* =========================================
-            ROLE
-            ========================================= */}
+{/* =========================================
+    ROLE / MANAGER HEADER
+========================================= */}
 
-        {data.role && (
+{data.role?.toLowerCase() === "manager" ? (
+    <div className="mt-4 w-full flex flex-col items-center">
+
+        {/* SECONDARY ROLES */}
+        <div
+            className="
+                w-full
+                flex
+                justify-center
+                text-[9px]
+                sm:text-xs
+                md:text-sm
+                uppercase
+                tracking-[2px]
+                sm:tracking-[3px]
+                text-primary
+                font-medium
+                text-center
+                whitespace-nowrap
+                cinematic-role
+            "
+        >
+            <p>PHOTOGRAPHER  &amp;  VISUAL STORYTELLER</p>
+        </div>
+
+        {/* MAIN ROLE */}
+        <p
+            className="
+                mt-2
+                text-sm
+                sm:text-base
+                text-primary
+                font-medium
+                text-center
+                cinematic-role
+            "
+        >
+            {data.role}
+        </p>
+
+        {/* FIXED TAGLINE */}
+        <p
+            className="
+                mt-4
+                text-sm
+                sm:text-base
+                text-black
+                font-semibold
+                tracking-wide
+                text-center
+                cinematic-role
+            "
+        >
+            Every Picture has a piece of life
+        </p>
+
+        {/* SANITY TAGLINE */}
+        {data.tagline && (
             <p
                 className="
-                    mt-3
-                    text-sm
-                    sm:text-base
-                    text-primary
-                    font-medium
+                    mt-2
+                    w-full
+                    max-w-3xl
+                    px-4
+                    text-xs
+                    sm:text-sm
+                    leading-6
+                    text-foreground/60
+                    italic
+                    text-center
+                    whitespace-pre-line
+                    break-words
                     cinematic-role
                 "
             >
-                {data.role}
+                {data.tagline}
             </p>
         )}
+
+    </div>
+) : (
+    data.role && (
+        <p
+            className="
+                mt-3
+                text-sm
+                sm:text-base
+                text-primary
+                font-medium
+                cinematic-role
+            "
+        >
+            {data.role}
+        </p>
+    )
+)}
 
     </div>
 
@@ -1015,28 +1099,74 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
 
 
                 {/* =================================================
-                    ABOUT
+                    SOCIAL
                 ================================================= */}
 
-                {data.bio && (
+                {data.socialLinks &&
+                    data.socialLinks.length > 0 && (
 
-                    <section className="max-w-3xl mx-auto mt-16 text-center">
+                        <section className="mt-16 text-center">
 
-                        <p className="text-[10px] uppercase tracking-[4px] text-primary mb-4">
-                            About
-                        </p>
+                            <p className="text-[10px] uppercase tracking-[4px] text-primary mb-3">
+                                Connect
+                            </p>
 
-                        <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
-                            A Little About Me
-                        </h2>
+                            <h2 className="text-2xl sm:text-3xl font-semibold mb-8">
+                                Find Me In
+                            </h2>
 
-                        <p className="text-sm sm:text-base leading-8 text-foreground/65">
-                            {data.bio}
-                        </p>
+                            <div className="flex flex-wrap justify-center gap-3">
 
-                    </section>
+                                {data.socialLinks.map(
+                                    (social, index) => {
 
-                )}
+                                        if (!social.url) {
+                                            return null;
+                                        }
+
+                                        return (
+
+                                            <a
+                                                key={`${social.url}-${index}`}
+                                                href={social.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="
+                                                    inline-flex
+                                                    items-center
+                                                    gap-3
+                                                    px-5
+                                                    py-3
+                                                    rounded-full
+                                                    border
+                                                    border-primary/15
+                                                    bg-secondary/20
+                                                    text-sm
+                                                    text-foreground/70
+                                                    hover:border-primary
+                                                    hover:text-primary
+                                                    transition
+                                                "
+                                            >
+
+                                                {getSocialIcon(
+                                                    social.title
+                                                )}
+
+                                                {social.title ||
+                                                    "Social Profile"}
+
+                                            </a>
+
+                                        );
+                                    }
+                                )}
+
+                            </div>
+
+                        </section>
+
+                    )}
 
 
                 {/* =================================================
@@ -1305,74 +1435,28 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
 
 
                 {/* =================================================
-                    SOCIAL
+                    ABOUT
                 ================================================= */}
 
-                {data.socialLinks &&
-                    data.socialLinks.length > 0 && (
+                {data.bio && (
 
-                        <section className="mt-16 text-center">
+                    <section className="max-w-3xl mx-auto mt-16 text-center">
 
-                            <p className="text-[10px] uppercase tracking-[4px] text-primary mb-3">
-                                Connect
-                            </p>
+                        <p className="text-[10px] uppercase tracking-[4px] text-primary mb-4">
+                            About
+                        </p>
 
-                            <h2 className="text-2xl sm:text-3xl font-semibold mb-8">
-                                Social Media
-                            </h2>
+                        <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
+                            A Little About Me
+                        </h2>
 
-                            <div className="flex flex-wrap justify-center gap-3">
+                        <p className="text-sm sm:text-base leading-8 text-foreground/65">
+                            {data.bio}
+                        </p>
 
-                                {data.socialLinks.map(
-                                    (social, index) => {
+                    </section>
 
-                                        if (!social.url) {
-                                            return null;
-                                        }
-
-                                        return (
-
-                                            <a
-                                                key={`${social.url}-${index}`}
-                                                href={social.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="
-                                                    inline-flex
-                                                    items-center
-                                                    gap-3
-                                                    px-5
-                                                    py-3
-                                                    rounded-full
-                                                    border
-                                                    border-primary/15
-                                                    bg-secondary/20
-                                                    text-sm
-                                                    text-foreground/70
-                                                    hover:border-primary
-                                                    hover:text-primary
-                                                    transition
-                                                "
-                                            >
-
-                                                {getSocialIcon(
-                                                    social.title
-                                                )}
-
-                                                {social.title ||
-                                                    "Social Profile"}
-
-                                            </a>
-
-                                        );
-                                    }
-                                )}
-
-                            </div>
-
-                        </section>
-
-                    )}
+                )}
 
 
                 
