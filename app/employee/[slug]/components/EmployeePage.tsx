@@ -1006,7 +1006,7 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
             {data.role}
         </p>
 
-        {/* FIXED TAGLINE */}
+        {/* FIXED TAGLINE - MANAGER ONLY */}
         <p
             className="
                 mt-4
@@ -1048,20 +1048,48 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
     </div>
 ) : (
     data.role && (
-        <p
-            className="
-                mt-3
-                text-sm
-                sm:text-base
-                text-primary
-                font-medium
-                cinematic-role
-            "
-        >
-            {data.role}
-        </p>
+        <div className="mt-3 flex flex-col items-center">
+
+            {/* MAIN ROLE */}
+            <p
+                className="
+                    text-sm
+                    sm:text-base
+                    text-primary
+                    font-medium
+                    cinematic-role
+                "
+            >
+                {data.role}
+            </p>
+
+            {/* SANITY TAGLINE - ALL EMPLOYEES */}
+            {data.tagline && (
+                <p
+                    className="
+                        mt-2
+                        w-full
+                        max-w-3xl
+                        px-4
+                        text-xs
+                        sm:text-sm
+                        leading-6
+                        text-foreground/60
+                        italic
+                        text-center
+                        whitespace-pre-line
+                        break-words
+                        cinematic-role
+                    "
+                >
+                    {data.tagline}
+                </p>
+            )}
+
+        </div>
     )
 )}
+
 
     </div>
 
