@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -282,62 +283,102 @@ const cinematicStyles = `
 
 
     /* =========================================
-       NAME
+       NAME INSIDE IMAGE
        ========================================= */
 
-    .cinematic-name {
+   .cinematic-name-overlay {
     opacity: 0;
 
     animation:
-        cinematicName
-        0.65s
+        cinematicNameOverlay
+        0.9s
         cubic-bezier(0.16, 1, 0.3, 1)
-        0.5s
+        3.0s
         both;
 
-    transform-origin: center;
     will-change: transform, opacity, filter;
 }
+    @keyframes cinematicNameOverlay {
+        0% {
+            opacity: 0;
 
-    @keyframes cinematicName {
-    0% {
-        opacity: 0;
-        transform: translateY(45px) scale(0.88);
-        filter: blur(12px);
-        letter-spacing: 0.25em;
-        text-shadow: 0 0 0 rgba(255,255,255,0);
+            transform:
+                translateY(32px)
+                scale(0.94);
+
+            filter: blur(10px);
+        }
+
+        45% {
+            opacity: 1;
+
+            transform:
+                translateY(-4px)
+                scale(1.015);
+
+            filter: blur(0);
+        }
+
+        70% {
+            transform:
+                translateY(2px)
+                scale(0.995);
+        }
+
+        100% {
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+
+            filter: blur(0);
+        }
     }
 
-    45% {
-        opacity: 1;
-        transform: translateY(-6px) scale(1.04);
-        filter: blur(0);
-        letter-spacing: 0.07em;
-        text-shadow:
-            0 0 20px rgba(255,255,255,0.25),
-            0 0 40px rgba(255,255,255,0.12);
-    }
 
-    70% {
-        transform: translateY(2px) scale(0.99);
-        letter-spacing: 0.035em;
-    }
+/* =========================================
+   NAME GLOW
+   ========================================= */
 
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
-        letter-spacing: 0.025em;
-        text-shadow: 0 0 0 rgba(255,255,255,0);
-    }
+.cinematic-name-glow {
+    color: #eadcc5;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: 0.045em;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.85),
+        0 4px 14px rgba(0, 0, 0, 0.65);
 }
 
 
     /* =========================================
-       NAME GLOW
+       NAME ACCENT LINE
        ========================================= */
 
-  
+    .cinematic-name-line {
+        animation:
+            nameLineReveal
+            0.7s
+            cubic-bezier(0.16, 1, 0.3, 1)
+            3.25s
+            both;
+
+        transform-origin: center;
+    }
+
+    @keyframes nameLineReveal {
+        0% {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+    }
 
 
     /* =========================================
@@ -354,6 +395,7 @@ const cinematicStyles = `
 
         will-change: transform, opacity, filter;
     }
+
 
     @keyframes cinematicRole {
         0% {
@@ -388,6 +430,48 @@ const cinematicStyles = `
             letter-spacing: normal;
         }
     }
+
+    /* =========================================
+   SECTION HEADINGS
+   ========================================= */
+
+.cinematic-section-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: 0.035em;
+    color: #b08d57;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+
+.cinematic-section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 55px;
+    height: 1px;
+    background: #b08d57;
+    transform: translateX(-50%);
+}
+
+.cinematic-section-title::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #b08d57;
+    transform: translateX(-50%);
+    box-shadow: 0 0 7px rgba(176, 141, 87, 0.35);
+}
+
 
 
     /* =========================================
@@ -446,37 +530,38 @@ const cinematicStyles = `
     /* =========================================
        MOBILE
        ========================================= */
-@media (max-width: 640px) {
 
-    .cinematic-background {
-        animation-duration: 0.75s;
-    }
+    @media (max-width: 640px) {
 
-    .cinematic-photo {
-        animation-duration: 1.1s;
-        animation-delay: 1.1s;
-    }
+        .cinematic-background {
+            animation-duration: 0.75s;
+        }
 
-    .cinematic-name {
-        animation-delay: 2.25s;
-    }
+        .cinematic-photo {
+            animation-duration: 1.1s;
+            animation-delay: 1.1s;
+        }
 
-    .cinematic-name-glow {
-        animation-delay: 2.25s;
-    }
+        .cinematic-name-overlay {
+            animation-delay: 2.25s;
+        }
 
-    .cinematic-role {
-        animation-delay: 2.8s;
-    }
+        .cinematic-name-line {
+            animation-delay: 2.55s;
+        }
 
-    .cinematic-divider {
-        animation-delay: 3.3s;
-    }
+        .cinematic-role {
+            animation-delay: 2.8s;
+        }
 
-    .cinematic-divider-dot {
-        animation-delay: 3.45s;
+        .cinematic-divider {
+            animation-delay: 3.3s;
+        }
+
+        .cinematic-divider-dot {
+            animation-delay: 3.45s;
+        }
     }
-}
 
 
     /* =========================================
@@ -488,7 +573,8 @@ const cinematicStyles = `
         .cinematic-profile,
         .cinematic-background,
         .cinematic-photo,
-        .cinematic-name,
+        .cinematic-name-overlay,
+        .cinematic-name-line,
         .cinematic-name-glow,
         .cinematic-role,
         .cinematic-divider,
@@ -545,6 +631,8 @@ interface EmployeeData {
 
     tagline?: string;
 
+    primaryTagline?: string;
+
     phone?: string;
 
     email?: string;
@@ -580,20 +668,6 @@ interface EmployeePageProps {
 
 const EmployeePage = ({ data }: EmployeePageProps) => {
     const [activeImage, setActiveImage] = useState<string | null>(null);
-
-    /*
-     * NEW:
-     * Person only appears after the background animation
-     * actually finishes.
-     */
-    const [showPerson, setShowPerson] = useState(false);
-
-    /*
-     * NEW:
-     * Name/role/divider only start after the person
-     * animation has finished.
-     */
-    const [showText, setShowText] = useState(false);
 
     /* =========================================================
        PROFILE NOT FOUND
@@ -682,7 +756,7 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
             return "****";
         }
 
-       return `${digits.slice(0, 2)}******${digits.slice(-4)}`;
+        return `${digits.slice(0, 2)}******${digits.slice(-4)}`;
     };
 
     /* =========================================================
@@ -800,330 +874,425 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
 
                 </div>
 
+
                 {/* =================================================
                     PROFILE HEADER
                 ================================================= */}
 
-              <section className="text-center cinematic-profile">
+                <section className="text-center cinematic-profile">
 
-    <div className="flex justify-center">
+                    <div className="flex justify-center">
 
-        <div
-            className="
-                relative
-                w-[280px]
-                h-[480px]
-                sm:w-[330px]
-                sm:h-[500px]
-                md:w-[360px]
-                md:h-[530px]
-            "
-        >
-
-            {/* =========================================
-                STAGE 1 - BACKGROUND
-                ========================================= */}
-
-            <div
-                className="
-                    absolute
-                    inset-0
-                    overflow-hidden
-                    rounded-[28px]
-                    cinematic-background-wrapper
-                    cinematic-background
-                    shadow-2xl
-                "
-            >
-                <Image
-                    src="/bg.png"
-                    alt=""
-                    fill
-                    priority
-                    sizes="
-                        (max-width: 640px) 280px,
-                        (max-width: 768px) 330px,
-                        360px
-                    "
-                    className="object-cover"
-                />
-
-                <div className="absolute inset-0 bg-black/15" />
-            </div>
-
-
-            {/* =========================================
-                STAGE 2 - EMPLOYEE
-                ========================================= */}
-
-            {data.photo?.asset?.url ? (
-                <div
-                    className="
-                        absolute
-                        inset-0
-                        flex
-                        items-end
-                        justify-center
-                        z-10
-                        pb-0
-                    "
-                >
-<div
-    className="
-        relative
-        w-[250px]
-        h-[400px]
-        sm:w-[295px]
-        sm:h-[455px]
-        md:w-[325px]
-        md:h-[510px]
-        cinematic-photo-wrapper
-        cinematic-photo
-    "
->
-                        <Image
-                            src={data.photo.asset.url}
-                            alt={data.name}
-                            fill
-                            priority
-                            sizes="
-                                (max-width: 640px) 245px,
-                                (max-width: 768px) 275px,
-                                300px
-                            "
+                        <div
                             className="
-                                object-contain
-                                drop-shadow-[0_25px_35px_rgba(0,0,0,0.32)]
+                                relative
+                                w-[280px]
+                                h-[480px]
+                                sm:w-[330px]
+                                sm:h-[500px]
+                                md:w-[360px]
+                                md:h-[530px]
                             "
-                        />
+                        >
+
+                            {/* =========================================
+                                STAGE 1 - BACKGROUND
+                            ========================================= */}
+
+                            <div
+                                className="
+                                    absolute
+                                    inset-0
+                                    overflow-hidden
+                                    rounded-[28px]
+                                    cinematic-background-wrapper
+                                    cinematic-background
+                                    shadow-2xl
+                                "
+                            >
+
+                                <Image
+                                    src="/bg.png"
+                                    alt=""
+                                    fill
+                                    priority
+                                    sizes="
+                                        (max-width: 640px) 280px,
+                                        (max-width: 768px) 330px,
+                                        360px
+                                    "
+                                    className="object-cover"
+                                />
+
+                                <div className="absolute inset-0 bg-black/15" />
+
+                            </div>
+
+
+                            {/* =========================================
+                                STAGE 2 - EMPLOYEE
+                            ========================================= */}
+
+                            {data.photo?.asset?.url ? (
+
+                                <div
+                                    className="
+                                        absolute
+                                        inset-0
+                                        flex
+                                        items-end
+                                        justify-center
+                                        z-10
+                                        pb-0
+                                    "
+                                >
+
+                                    <div
+                                        className="
+                                            relative
+                                            w-[250px]
+                                            h-[400px]
+                                            sm:w-[295px]
+                                            sm:h-[455px]
+                                            md:w-[325px]
+                                            md:h-[510px]
+                                            cinematic-photo-wrapper
+                                            cinematic-photo
+                                        "
+                                    >
+
+                                        <Image
+                                            src={data.photo.asset.url}
+                                            alt={data.name}
+                                            fill
+                                            priority
+                                            sizes="
+                                                (max-width: 640px) 245px,
+                                                (max-width: 768px) 275px,
+                                                300px
+                                            "
+                                            className="
+                                                object-contain
+                                                drop-shadow-[0_25px_35px_rgba(0,0,0,0.32)]
+                                            "
+                                        />
+
+                                    </div>
+
+                                </div>
+
+                            ) : (
+
+                                <div
+                                    className="
+                                        absolute
+                                        inset-0
+                                        flex
+                                        items-center
+                                        justify-center
+                                        z-10
+                                    "
+                                >
+
+                                    <div
+                                        className="
+                                            relative
+                                            w-[210px]
+                                            h-[285px]
+                                            sm:w-[240px]
+                                            sm:h-[325px]
+                                            md:w-[260px]
+                                            md:h-[350px]
+                                            rounded-[18px]
+                                            border
+                                            border-white/20
+                                            bg-black/20
+                                            backdrop-blur-sm
+                                            flex
+                                            items-center
+                                            justify-center
+                                            cinematic-photo
+                                        "
+                                    >
+
+                                        <span className="text-xs text-white/50">
+                                            No Photo
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            )}
+
+
+                            {/* =========================================
+                                NAME - INSIDE IMAGE
+                            ========================================= */}
+
+                            <div
+                                className="
+                                    absolute
+                                    left-0
+                                    right-0
+                                    bottom-0
+                                    z-30
+                                    pointer-events-none
+                                    overflow-hidden
+                                    rounded-b-[28px]
+                                    pt-16
+                                    pb-4
+                                    px-4
+                                    sm:pb-8
+                                    sm:px-6
+                                "
+                                style={{
+                                    background:
+                                        "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.62) 35%, rgba(0,0,0,0.22) 68%, transparent 100%)",
+                                }}
+                            >
+
+                                <div className="flex flex-col items-center">
+
+                                    {/* NAME */}
+
+                                    <h1
+                                        className="
+                                            cinematic-name-overlay
+                                            cinematic-name-glow
+                                            font-normal
+                                            text-[26px]
+                                            sm:text-[31px]
+                                            md:text-[36px]
+                                            leading-tight
+                                            text-center
+                                            max-w-full
+                                            break-words
+                                        "
+                                    >
+                                        {data.name}
+                                    </h1>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
-                </div>
-            ) : (
-                <div
-                    className="
-                        absolute
-                        inset-0
-                        flex
-                        items-center
-                        justify-center
-                        z-10
-                    "
-                >
+
+
+                    {/* =========================================
+                        ROLE / MANAGER HEADER
+                    ========================================= */}
+
+                    {data.role?.toLowerCase() === "manager" ? (
+
+                        <div className="mt-8 w-full flex flex-col items-center">
+
+                            {/* SECONDARY ROLES */}
+
+                            <div
+                                className="
+                                    w-full
+                                    flex
+                                    justify-center
+                                    text-[9px]
+                                    sm:text-xs
+                                    md:text-sm
+                                    uppercase
+                                    tracking-[2px]
+                                    sm:tracking-[3px]
+                                    text-primary
+                                    font-medium
+                                    text-center
+                                    whitespace-nowrap
+                                    cinematic-role
+                                "
+                            >
+
+                                <p>
+                                    PHOTOGRAPHER &amp; VISUAL STORYTELLER
+                                </p>
+
+                            </div>
+
+
+                            {/* MAIN ROLE */}
+
+                            <p
+                                className="
+                                    mt-2
+                                    text-sm
+                                    sm:text-base
+                                    text-primary
+                                    font-medium
+                                    text-center
+                                    cinematic-role
+                                "
+                            >
+                                {data.role}
+                            </p>
+
+
+                            {/* PRIMARY TAGLINE - SANITY */}
+
+                            {data.primaryTagline && (
+
+                                <p
+                                    className="
+                                        mt-4
+                                        text-sm
+                                        sm:text-base
+                                        text-black
+                                        font-semibold
+                                        tracking-wide
+                                        text-center
+                                        cinematic-role
+                                    "
+                                >
+                                    {data.primaryTagline}
+                                </p>
+
+                            )}
+
+
+                            {/* SANITY TAGLINE */}
+
+                            {data.tagline && (
+
+                                <p
+                                    className="
+                                        mt-2
+                                        w-full
+                                        max-w-3xl
+                                        px-4
+                                        text-xs
+                                        sm:text-sm
+                                        leading-6
+                                        text-foreground/60
+                                        italic
+                                        text-center
+                                        whitespace-pre-line
+                                        break-words
+                                        cinematic-role
+                                    "
+                                >
+                                    {data.tagline}
+                                </p>
+
+                            )}
+
+                        </div>
+
+                    ) : (
+
+                        data.role && (
+
+                            <div className="mt-6 flex flex-col items-center">
+
+                                {/* MAIN ROLE */}
+
+                                <p
+                                    className="
+                                        text-sm
+                                        sm:text-base
+                                        text-primary
+                                        font-medium
+                                        cinematic-role
+                                    "
+                                >
+                                    {data.role}
+                                </p>
+
+
+                                {/* PRIMARY TAGLINE - SANITY */}
+
+                                {data.primaryTagline && (
+
+                                    <p
+                                        className="
+                                            mt-4
+                                            text-sm
+                                            sm:text-base
+                                            text-black
+                                            font-semibold
+                                            tracking-wide
+                                            text-center
+                                            cinematic-role
+                                        "
+                                    >
+                                        {data.primaryTagline}
+                                    </p>
+
+                                )}
+
+
+                                {/* SANITY TAGLINE - ALL EMPLOYEES */}
+
+                                {data.tagline && (
+
+                                    <p
+                                        className="
+                                            mt-2
+                                            w-full
+                                            max-w-3xl
+                                            px-4
+                                            text-xs
+                                            sm:text-sm
+                                            leading-6
+                                            text-foreground/60
+                                            italic
+                                            text-center
+                                            whitespace-pre-line
+                                            break-words
+                                            cinematic-role
+                                        "
+                                    >
+                                        {data.tagline}
+                                    </p>
+
+                                )}
+
+                            </div>
+
+                        )
+
+                    )}
+
+
+                    {/* =========================================
+                        DIVIDER
+                    ========================================= */}
+
                     <div
                         className="
-                            relative
-                            w-[210px]
-                            h-[285px]
-                            sm:w-[240px]
-                            sm:h-[325px]
-                            md:w-[260px]
-                            md:h-[350px]
-                            rounded-[18px]
-                            border
-                            border-white/20
-                            bg-black/20
-                            backdrop-blur-sm
                             flex
                             items-center
                             justify-center
-                            cinematic-photo
+                            gap-3
+                            mt-5
+                            cinematic-divider
                         "
                     >
-                        <span className="text-xs text-white/50">
-                            No Photo
-                        </span>
+
+                        <span className="w-16 h-px bg-primary/40" />
+
+                        <span
+                            className="
+                                w-2
+                                h-2
+                                rounded-full
+                                bg-primary
+                                cinematic-divider-dot
+                            "
+                        />
+
+                        <span className="w-16 h-px bg-primary/40" />
+
                     </div>
-                </div>
-            )}
 
-        </div>
-    </div>
-
-
-    {/* =========================================
-        NAME
-        ========================================= */}
-
-    <div className="mt-10">
-
-        <h1
-            className="
-                text-4xl
-                sm:text-5xl
-                md:text-6xl
-                font-serif
-                font-normal
-                tracking-wide
-                text-primary
-                cinematic-name
-            "
-        >
-            {data.name}
-        </h1>
-
-
-{/* =========================================
-    ROLE / MANAGER HEADER
-========================================= */}
-
-{data.role?.toLowerCase() === "manager" ? (
-    <div className="mt-4 w-full flex flex-col items-center">
-
-        {/* SECONDARY ROLES */}
-        <div
-            className="
-                w-full
-                flex
-                justify-center
-                text-[9px]
-                sm:text-xs
-                md:text-sm
-                uppercase
-                tracking-[2px]
-                sm:tracking-[3px]
-                text-primary
-                font-medium
-                text-center
-                whitespace-nowrap
-                cinematic-role
-            "
-        >
-            <p>PHOTOGRAPHER  &amp;  VISUAL STORYTELLER</p>
-        </div>
-
-        {/* MAIN ROLE */}
-        <p
-            className="
-                mt-2
-                text-sm
-                sm:text-base
-                text-primary
-                font-medium
-                text-center
-                cinematic-role
-            "
-        >
-            {data.role}
-        </p>
-
-        {/* FIXED TAGLINE - MANAGER ONLY */}
-        <p
-            className="
-                mt-4
-                text-sm
-                sm:text-base
-                text-black
-                font-semibold
-                tracking-wide
-                text-center
-                cinematic-role
-            "
-        >
-            Every Picture has a piece of life
-        </p>
-
-        {/* SANITY TAGLINE */}
-        {data.tagline && (
-            <p
-                className="
-                    mt-2
-                    w-full
-                    max-w-3xl
-                    px-4
-                    text-xs
-                    sm:text-sm
-                    leading-6
-                    text-foreground/60
-                    italic
-                    text-center
-                    whitespace-pre-line
-                    break-words
-                    cinematic-role
-                "
-            >
-                {data.tagline}
-            </p>
-        )}
-
-    </div>
-) : (
-    data.role && (
-        <div className="mt-3 flex flex-col items-center">
-
-            {/* MAIN ROLE */}
-            <p
-                className="
-                    text-sm
-                    sm:text-base
-                    text-primary
-                    font-medium
-                    cinematic-role
-                "
-            >
-                {data.role}
-            </p>
-
-            {/* SANITY TAGLINE - ALL EMPLOYEES */}
-            {data.tagline && (
-                <p
-                    className="
-                        mt-2
-                        w-full
-                        max-w-3xl
-                        px-4
-                        text-xs
-                        sm:text-sm
-                        leading-6
-                        text-foreground/60
-                        italic
-                        text-center
-                        whitespace-pre-line
-                        break-words
-                        cinematic-role
-                    "
-                >
-                    {data.tagline}
-                </p>
-            )}
-
-        </div>
-    )
-)}
-
-
-    </div>
-
-
-    {/* =========================================
-        DIVIDER
-        ========================================= */}
-
-    <div
-        className="
-            flex
-            items-center
-            justify-center
-            gap-3
-            mt-5
-            cinematic-divider
-        "
-    >
-        <span className="w-16 h-px bg-primary/40" />
-
-        <span
-            className="
-                w-2
-                h-2
-                rounded-full
-                bg-primary
-                cinematic-divider-dot
-            "
-        />
-
-        <span className="w-16 h-px bg-primary/40" />
-    </div>
-
-</section>
+                </section>
 
 
                 {/* =================================================
@@ -1134,12 +1303,12 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                     data.socialLinks.length > 0 && (
 
                         <section className="mt-16 text-center">
-
+{/* 
                             <p className="text-[10px] uppercase tracking-[4px] text-primary mb-3">
                                 Connect
-                            </p>
+                            </p> */}
 
-                            <h2 className="text-2xl sm:text-3xl font-semibold mb-8">
+                            <h2 className="cinematic-section-title text-2xl sm:text-3xl mb-8">
                                 Find Me In
                             </h2>
 
@@ -1245,6 +1414,7 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
 
                             )}
 
+
                             {data.dob && (
 
                                 <div className="text-center p-6 rounded-2xl bg-secondary/20 border border-primary/10">
@@ -1270,6 +1440,7 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                                 </div>
 
                             )}
+
 
                             {data.blood && (
 
@@ -1311,12 +1482,12 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                 {data.skills && data.skills.length > 0 && (
 
                     <section className="mt-16 text-center">
-
+{/* 
                         <p className="text-[10px] uppercase tracking-[4px] text-primary mb-3">
                             Expertise
-                        </p>
+                        </p> */}
 
-                        <h2 className="text-2xl sm:text-3xl font-semibold mb-8">
+                        <h2 className="cinematic-section-title text-2xl sm:text-3xl mb-8">
                             Skills & Expertise
                         </h2>
 
@@ -1369,6 +1540,7 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
 
                         </div>
 
+
                         {images.length > 0 && (
 
                             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -1414,6 +1586,7 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                             </div>
 
                         )}
+
 
                         {videos.length > 0 && (
 
@@ -1470,11 +1643,11 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
 
                     <section className="max-w-3xl mx-auto mt-16 text-center">
 
-                        <p className="text-[10px] uppercase tracking-[4px] text-primary mb-4">
+                        {/* <p className="text-[10px] uppercase tracking-[4px] text-primary mb-4">
                             About
-                        </p>
+                        </p> */}
 
-                        <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
+                        <h2 className="cinematic-section-title text-2xl sm:text-3xl mb-8">
                             A Little About Me
                         </h2>
 
@@ -1487,146 +1660,176 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                 )}
 
 
-                
-{/* =================================================
-    FIXED CONTACT BAR
-================================================= */}
+                {/* =================================================
+                    FIXED CONTACT BAR
+                ================================================= */}
 
-{(data.email || data.phone) && (
-    <div
-        className="
-            fixed
-            bottom-0
-            left-0
-            w-full
-            z-[100]
-            bg-background/80
-            backdrop-blur-lg
-            border-t
-            border-primary/10
-            px-2
-            sm:px-4
-            py-3
-            flex
-            flex-wrap
-            items-center
-            justify-center
-            gap-x-2
-            gap-y-2
-            sm:gap-4
-        "
-    >
+                {(data.email || data.phone) && (
 
-        {/* PHONE */}
-        {data.phone && data.phoneVisibility === "show" && (
-            <a
-                href={getPhoneHref()}
-                target={
-                    data.phoneAction === "whatsapp"
-                        ? "_blank"
-                        : undefined
-                }
-                rel={
-                    data.phoneAction === "whatsapp"
-                        ? "noopener noreferrer"
-                        : undefined
-                }
-                className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    gap-1
-                    sm:gap-2
-                    px-2
-                    sm:px-4
-                    py-2
-                    rounded-full
-                    border
-                    border-primary
-                    hover:bg-primary
-                    hover:text-background
-                    transition
-                    text-[10px]
-                    sm:text-sm
-                    whitespace-nowrap
-                    max-w-full
-                "
-            >
-                {data.phoneAction === "whatsapp" ? (
-                    <FaWhatsapp className="shrink-0" size={12} />
-                ) : (
-                    <FaPhoneAlt className="shrink-0" size={12} />
+                    <div
+                        className="
+                            fixed
+                            bottom-0
+                            left-0
+                            w-full
+                            z-[100]
+                            bg-background/80
+                            backdrop-blur-lg
+                            border-t
+                            border-primary/10
+                            px-2
+                            sm:px-4
+                            py-3
+                            flex
+                            flex-wrap
+                            items-center
+                            justify-center
+                            gap-x-2
+                            gap-y-2
+                            sm:gap-4
+                        "
+                    >
+
+                        {/* PHONE */}
+
+                        {data.phone &&
+                            data.phoneVisibility === "show" && (
+
+                                <a
+                                    href={getPhoneHref()}
+                                    target={
+                                        data.phoneAction === "whatsapp"
+                                            ? "_blank"
+                                            : undefined
+                                    }
+                                    rel={
+                                        data.phoneAction === "whatsapp"
+                                            ? "noopener noreferrer"
+                                            : undefined
+                                    }
+                                    className="
+                                        inline-flex
+                                        items-center
+                                        justify-center
+                                        gap-1
+                                        sm:gap-2
+                                        px-2
+                                        sm:px-4
+                                        py-2
+                                        rounded-full
+                                        border
+                                        border-primary
+                                        hover:bg-primary
+                                        hover:text-background
+                                        transition
+                                        text-[10px]
+                                        sm:text-sm
+                                        whitespace-nowrap
+                                        max-w-full
+                                    "
+                                >
+
+                                    {data.phoneAction === "whatsapp" ? (
+                                        <FaWhatsapp
+                                            className="shrink-0"
+                                            size={12}
+                                        />
+                                    ) : (
+                                        <FaPhoneAlt
+                                            className="shrink-0"
+                                            size={12}
+                                        />
+                                    )}
+
+                                    <span>{data.phone}</span>
+
+                                </a>
+
+                            )}
+
+
+                        {/* MASK - NO CLICK */}
+
+                        {data.phone &&
+                            data.phoneVisibility === "mask" && (
+
+                                <span
+                                    className="
+                                        inline-flex
+                                        items-center
+                                        justify-center
+                                        gap-1
+                                        sm:gap-2
+                                        px-2
+                                        sm:px-4
+                                        py-2
+                                        rounded-full
+                                        border
+                                        border-primary/30
+                                        opacity-70
+                                        text-[10px]
+                                        sm:text-sm
+                                        whitespace-nowrap
+                                        max-w-full
+                                    "
+                                >
+
+                                    <FaPhoneAlt
+                                        className="shrink-0"
+                                        size={12}
+                                    />
+
+                                    {getMaskedPhone()}
+
+                                </span>
+
+                            )}
+
+
+                        {/* EMAIL */}
+
+                        {data.email && (
+
+                            <a
+                                href={`mailto:${data.email}`}
+                                className="
+                                    inline-flex
+                                    items-center
+                                    justify-center
+                                    gap-1
+                                    sm:gap-2
+                                    px-2
+                                    sm:px-4
+                                    py-2
+                                    rounded-full
+                                    border
+                                    border-primary
+                                    hover:bg-primary
+                                    hover:text-background
+                                    transition
+                                    text-[10px]
+                                    sm:text-sm
+                                    max-w-full
+                                    min-w-0
+                                    break-all
+                                    sm:break-normal
+                                "
+                            >
+
+                                <FaEnvelope
+                                    className="shrink-0"
+                                    size={12}
+                                />
+
+                                <span>{data.email}</span>
+
+                            </a>
+
+                        )}
+
+                    </div>
+
                 )}
-
-                <span>{data.phone}</span>
-            </a>
-        )}
-
-        {/* MASK - NO CLICK */}
-        {data.phone && data.phoneVisibility === "mask" && (
-            <span
-                className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    gap-1
-                    sm:gap-2
-                    px-2
-                    sm:px-4
-                    py-2
-                    rounded-full
-                    border
-                    border-primary/30
-                    opacity-70
-                    text-[10px]
-                    sm:text-sm
-                    whitespace-nowrap
-                    max-w-full
-                "
-            >
-                <FaPhoneAlt className="shrink-0" size={12} />
-                {getMaskedPhone()}
-            </span>
-        )}
-
-        {/* EMAIL */}
-        {data.email && (
-            <a
-                href={`mailto:${data.email}`}
-                className="
-                    inline-flex
-                    items-center
-                    justify-center
-                    gap-1
-                    sm:gap-2
-                    px-2
-                    sm:px-4
-                    py-2
-                    rounded-full
-                    border
-                    border-primary
-                    hover:bg-primary
-                    hover:text-background
-                    transition
-                    text-[10px]
-                    sm:text-sm
-                    max-w-full
-                    min-w-0
-                    break-all
-                    sm:break-normal
-                "
-            >
-                <FaEnvelope className="shrink-0" size={12} />
-                <span>{data.email}</span>
-            </a>
-        )}
-
-    </div>
-)}
-
-
-
-
 
 
                 {/* =================================================
@@ -1651,13 +1854,7 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
 
                 </div>
 
-                
-
             </div>
-
-
-
-            
 
 
             {/* =====================================================
@@ -1711,8 +1908,6 @@ const EmployeePage = ({ data }: EmployeePageProps) => {
                 </div>
 
             )}
-
-            
 
         </main>
     );
