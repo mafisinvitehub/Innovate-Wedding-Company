@@ -136,6 +136,7 @@ export const singleEmployeeQuery = `
 *[_type == "employee" && slug.current == $slug][0]{
   name,
   role,
+  primaryTagline,
   tagline,
   bio,
   skills,
